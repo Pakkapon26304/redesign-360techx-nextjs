@@ -63,7 +63,6 @@ export default function TmsEnterpriseBusinessFlowSection() {
                                     </svg>
                                 </div>
                             </div>
-
                         </div>
 
                         {/* SNAKE 1: From Col 1 (Box 2) to Col 2 (Box 1) */}
