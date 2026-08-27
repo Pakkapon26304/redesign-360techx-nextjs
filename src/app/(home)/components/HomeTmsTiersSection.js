@@ -55,7 +55,7 @@ export default function HomeTmsTiersSection() {
                     </div>
             </div>
                 <div className="tier-visual">
-                    <img src="/Logo-interface/mockup-วางแผนการขนส่ง-Enterprise.png" alt="Basic Tier Interface" className="tier-interface-img" />
+                    <img src="/Logo-interface/homepage-tms-basic.png" alt="Basic Tier Interface" className="tier-interface-img" />
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@ export default function HomeTmsTiersSection() {
                         <div className="benefit">
                             <span className="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
                             <div>
-                                <h5>มองเห็นภาพรวมสถานะขนส่งได้มากขึ้นผ่าน Dashboard</h5>
+                                <h5>เห็นภาพรวมสถานะขนส่งได้มากขึ้นผ่าน Dashboard</h5>
                                 <p>ติดตามสถานะของงานในแต่ละจุด เพื่อแก้ไขสถานการณ์เบื้องต้นแทบจะทันท่วงที</p>
                             </div>
                         </div>
@@ -101,7 +101,7 @@ export default function HomeTmsTiersSection() {
                     </div>
             </div>
                 <div className="tier-visual">
-                    <img src="/Logo-interface/mockup-วางแผนการขนส่ง-Enterprise.png" alt="Premium Tier Interface" className="tier-interface-img" />
+                    <img src="/Logo-interface/homepage-tms-premium.png" alt="Premium Tier Interface" className="tier-interface-img" />
                 </div>
             </div>
         </div>
@@ -156,7 +156,10 @@ export default function HomeTmsTiersSection() {
         <div id="ibid" className="tier-row reverse reveal">
             <div className="tier-container">
                 <div className="tier-info">
-                    <h3 className="tier-title">iBID <span style={{ color: 'var(--primary)' }}>//</span></h3>
+                    <h3 className="tier-title">
+                        <img src="/Logo-interface/ibid_horizontal_darkmode.png" alt="iBID" className="tier-logo-img dark-logo" style={{ height: '52px' }} />
+                        <img src="/Logo-interface/ibid_horizontal_lightmode.png" alt="iBID" className="tier-logo-img light-logo" style={{ height: '52px' }} />
+                    </h3>
                     <h4 className="tier-subtitle">ระบบจัดการเปิดประมูลงานโลจิสติกส์ ประมูลงานขนส่งออนไลน์สำหรับธุรกิจ</h4>
                     <div className="tier-benefits">
                         <div className="benefit">
@@ -207,7 +210,9 @@ export default function HomeTmsTiersSection() {
         <div id="topup" className="tier-row reveal">
             <div className="tier-container">
                 <div className="tier-info">
-                    <h3 className="tier-title"><span style={{ color: 'var(--secondary)' }}>360</span>TOP UP</h3>
+                    <h3 className="tier-title">
+                        <img src="/Logo-interface/logo-360topup.png" alt="360TOP UP" className="tier-logo-img" style={{ height: '52px' }} />
+                    </h3>
                     <h4 className="tier-subtitle">ONLINE FLEET CARD<br />ระบบคำนวณน้ำมัน และระบบซื้อน้ำมันออนไลน์</h4>
                     <div className="tier-benefits">
                         <div className="benefit">
@@ -225,7 +230,7 @@ export default function HomeTmsTiersSection() {
                             </div>
                             <div>
                                 <h5>ระบบซื้อน้ำมันและจ่ายคูปองน้ำมันออนไลน์</h5>
-                                <p>ให้คุณสามารถซื้อน้ำมันได้ล่วงหน้าพร้อมรับส่วนลดพิเศษ และจ่ายเป็นคูปองน้ำมันออนไลน์ ส่งให้คนขับ รถบรรทุกของคุณ เติมได้ที่ปั๊มน้ำมัน PT ทุกสาขาทั่วประเทศไทย</p>
+                                <p>ซื้อคูปองน้ำมันออนไลน์และส่งให้คนขับรถบรรทุก เติมได้ที่ปั๊มน้ำมัน PT Station ทั่วประเทศไทย</p>
                             </div>
                         </div>
                         <div className="benefit">
@@ -234,13 +239,13 @@ export default function HomeTmsTiersSection() {
                             </div>
                             <div>
                                 <h5>ส่งรหัสเติมน้ำมันให้คนขับผ่านแอป 360TRUCKER</h5>
-                                <p>สามารถติดตามสถานะการเติมน้ำมันได้ทันทีที่คนขับรถบรรทุกของท่านใช้คูปองเติมน้ำมัน บันทึกเป็นข้อมูล พร้อมออกใบเสร็จ ใบกำกับภาษี และคะแนนสะสมแต้ม PT Max Card ป้องกันการทุจริตได้ 100%</p>
+                                <p>สามารถติดตามสถานะการเติมน้ำมันได้ทันที พร้อมใบกำกับภาษี ป้องกันการทุจริตได้ 100%</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className="tier-visual">
-                    <img src="/Logo-interface/mockup-วางแผนการขนส่ง-Enterprise.png" alt="Enterprise Tier Interface" className="tier-interface-img" />
+                    <img src="/Logo-interface/homepage-360topup.webp" alt="360TOP UP Interface" className="tier-interface-img" />
                 </div>
                     </div>
         </div>
