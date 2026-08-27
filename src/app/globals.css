@@ -2995,3 +2995,31 @@ html, body {
    95% { opacity: 1; }
    100% { top: 110px; left: 100%; opacity: 0; }
 }
+
+/* User requested: Center snake lines exactly on the middle of the cards */
+/* Shifting all Y-positions down by 54px to hit the 70px center mark of the 140px card */
+.snake-1 .line-h-bottom { top: 364px !important; }
+.snake-1 .line-v { top: 164px !important; height: 200px !important; }
+.snake-1 .line-h-top { top: 164px !important; }
+
+.snake-2 .line-h-bottom { top: 564px !important; }
+.snake-2 .line-v { top: 164px !important; height: 400px !important; }
+.snake-2 .line-h-top { top: 164px !important; }
+
+@keyframes snake1-dot {
+   0% { top: 364px; left: 0; opacity: 0; }
+   5% { opacity: 1; }
+   9.4% { top: 364px; left: 50%; }
+   91.4% { top: 164px; left: 50%; }
+   95% { opacity: 1; }
+   100% { top: 164px; left: 100%; opacity: 0; }
+}
+
+@keyframes snake2-dot {
+   0% { top: 564px; left: 0; opacity: 0; }
+   2% { opacity: 1; }
+   5.2% { top: 564px; left: 50%; }
+   95.2% { top: 164px; left: 50%; }
+   98% { opacity: 1; }
+   100% { top: 164px; left: 100%; opacity: 0; }
+}
