@@ -8,6 +8,8 @@ import TestimonialSectionIbid from './components/TestimonialSectionIbid';
 import FaqSectionIbid from './components/FaqSectionIbid';
 import CtaSectionIbid from './components/CtaSectionIbid';
 
+import IbidCustomerLogosSection from './components/IbidCustomerLogosSection';
+
 // SEO & GEO Optimization
 export const metadata = {
   title: 'ระบบ iBID ประมูลงานขนส่งออนไลน์ | 360TECHX',
@@ -127,8 +129,9 @@ export default function IbidPage() {
       <Redesign1SectionIbid />
       <ZPatternBenefitsSectionIbid />
       <StatsSummarySectionIbid />
-      <TestimonialSectionIbid />
-      <FaqSectionIbid />
+      <IbidCustomerLogosSection />
+      {/* <TestimonialSectionIbid /> */}
+      {/* <FaqSectionIbid /> */}
       <CtaSectionIbid />
 
     </main>

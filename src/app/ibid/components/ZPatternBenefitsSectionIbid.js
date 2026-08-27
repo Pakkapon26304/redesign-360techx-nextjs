@@ -175,6 +175,31 @@ export default function ZPatternBenefitsSectionIbid() {
                       </div>
                   </div>
               </div>
+
+              {/* Customer Success Section */}
+              <div className="z-pattern-row">
+                  <div className="z-pattern-text">
+                      <img src="/Logo-customer-ibid/TRR-LIN-logo.png" alt="TRR-LIN Logo" style={{ height: '60px', marginBottom: '1.5rem', objectFit: 'contain' }} />
+                      <h2 style={{ fontSize: '3rem', fontWeight: '800', color: 'var(--text-main)', marginBottom: '1.5rem', lineHeight: '1.2' }}><span className="text-gradient">ความสำเร็จ</span>ของลูกค้า</h2>
+                      <p style={{ fontSize: '1.1rem', color: 'var(--text-muted)', marginBottom: '3rem', lineHeight: '1.8' }}>
+                          วาระการประมูลรถขนส่งน้ำตาลในประเทศ ประจำวันที่ 15 ต.ค. 2020 ประสบความสำเร็จอย่างสูงด้วยการนำระบบออนไลน์ <strong className="text-gradient">Ibid</strong> มาใช้เป็นครั้งแรก สามารถดำเนินการเสร็จสิ้น<strong className="text-gradient">ใน 1 วัน</strong> บริหารงานขนส่ง <strong className="text-gradient">15 โปรเจกต์</strong> <strong className="text-gradient">110 เส้นทาง</strong>ได้อย่างมีประสิทธิภาพ และประหยัดงบประมาณค่าขนส่งได้ถึง <strong className="text-gradient">10.17%</strong>
+                      </p>
+                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                      </div>
+                  </div>
+                  <div className="z-pattern-img-wrapper">
+                      <img src="/tms-picture/success-case-ibid.jpg" className="z-pattern-main-img" alt="Customer Success" />
+                      
+                      {/* Top Right Widget */}
+                      <div className="floating-card-tr">
+                          <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                              <span style={{ fontSize: '2.5rem', fontWeight: '800', color: 'var(--text-main)', lineHeight: '1' }}>110+</span>
+                              <span style={{ color: '#10b981' }}><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><polyline points="18 15 12 9 6 15"></polyline></svg></span>
+                          </div>
+                          <div style={{ fontSize: '0.9rem', color: 'var(--text-muted)', fontWeight: '600' }}>Success Projects</div>
+                      </div>
+                  </div>
+              </div>
           </div>
       </section>
 

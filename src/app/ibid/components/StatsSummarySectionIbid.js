@@ -4,17 +4,17 @@ export default function StatsSummarySectionIbid() {
   return (
     <>
       {/* Stats Summary Section */}
-      <section className="reveal" style={{ padding: '0 2rem 8rem 2rem', background: 'var(--bg-main)' }}>
+      <section className="reveal" style={{ padding: '0 2rem 3rem 2rem', background: 'var(--bg-main)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', gap: '4rem', flexWrap: 'wrap', justifyContent: 'space-between' }}>
               {/* Stat 1 */}
               <div style={{ flex: '1 1 200px' }}>
                   <div style={{ borderTop: '2px solid var(--border-color)', position: 'relative', paddingTop: '1.5rem' }}>
                       <div style={{ position: 'absolute', top: '-2px', left: 0, width: '40px', height: '2px', background: 'var(--primary)' }}></div>
                       <div style={{ fontSize: '3.5rem', fontWeight: '800', color: 'var(--text-main)', display: 'flex', alignItems: 'flex-start', gap: '0.25rem', lineHeight: '1' }}>
-                          10<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}>%</span>
+                          1<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}> วัน</span>
                       </div>
                       <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.6', marginTop: '1.5rem', fontWeight: '500' }}>
-                          อัตราประหยัดต้นทุนค่าขนส่งเฉลี่ยต่อโปรเจคจากการใช้ระบบ iBID
+                          เปิดวาระการประมูลจากออฟไลน์สู่ระบบออนไลน์ที่ใช้เวลานาน ให้จบได้ภายใน 1 วัน
                       </p>
                   </div>
               </div>
@@ -24,10 +24,10 @@ export default function StatsSummarySectionIbid() {
                   <div style={{ borderTop: '2px solid var(--border-color)', position: 'relative', paddingTop: '1.5rem' }}>
                       <div style={{ position: 'absolute', top: '-2px', left: 0, width: '40px', height: '2px', background: 'var(--primary)' }}></div>
                       <div style={{ fontSize: '3.5rem', fontWeight: '800', color: 'var(--text-main)', display: 'flex', alignItems: 'flex-start', gap: '0.25rem', lineHeight: '1' }}>
-                          110<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}>+</span>
+                          15<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}> Projects</span>
                       </div>
                       <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.6', marginTop: '1.5rem', fontWeight: '500' }}>
-                          เส้นทางการขนส่งทั่วประเทศที่รองรับการประมูลผ่านเครือข่ายรถขนส่ง
+                          สามารถจัดการวาระการประมูลงานขนส่งได้มากถึง 15 โปรเจค โดยใช้จำนวนคนไม่ถึง 10 คน
                       </p>
                   </div>
               </div>
@@ -37,10 +37,10 @@ export default function StatsSummarySectionIbid() {
                   <div style={{ borderTop: '2px solid var(--border-color)', position: 'relative', paddingTop: '1.5rem' }}>
                       <div style={{ position: 'absolute', top: '-2px', left: 0, width: '40px', height: '2px', background: 'var(--primary)' }}></div>
                       <div style={{ fontSize: '3.5rem', fontWeight: '800', color: 'var(--text-main)', display: 'flex', alignItems: 'flex-start', gap: '0.25rem', lineHeight: '1' }}>
-                          100<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}>%</span>
+                          110<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}> เส้นทาง</span>
                       </div>
                       <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.6', marginTop: '1.5rem', fontWeight: '500' }}>
-                          ความโปร่งใส ตรวจสอบได้ทุกขั้นตอน ลดปัญหาการทุจริตในองค์กร
+                          บริหารจัดการเส้นทางการประมูลงานขนส่งขนาดใหญ่ 110 เส้นทางได้อย่างมีประสิทธิภาพ
                       </p>
                   </div>
               </div>
@@ -50,10 +50,10 @@ export default function StatsSummarySectionIbid() {
                   <div style={{ borderTop: '2px solid var(--border-color)', position: 'relative', paddingTop: '1.5rem' }}>
                       <div style={{ position: 'absolute', top: '-2px', left: 0, width: '40px', height: '2px', background: 'var(--primary)' }}></div>
                       <div style={{ fontSize: '3.5rem', fontWeight: '800', color: 'var(--text-main)', display: 'flex', alignItems: 'flex-start', gap: '0.25rem', lineHeight: '1' }}>
-                          24<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}>/7</span>
+                          10.17<span style={{ color: 'var(--primary)', fontSize: '2.5rem', fontWeight: '600', marginTop: '0.2rem' }}>%</span>
                       </div>
                       <p style={{ color: 'var(--text-muted)', fontSize: '1rem', lineHeight: '1.6', marginTop: '1.5rem', fontWeight: '500' }}>
-                          ทีมงาน Customer Success พร้อมดูแลและให้คำปรึกษาตลอดการใช้งาน
+                          โครงการประสบความสำเร็จ และช่วยลดต้นทุนค่าขนส่งได้มากถึง 10.17% ในทุกโปรเจคและเส้นทาง
                       </p>
                   </div>
               </div>
