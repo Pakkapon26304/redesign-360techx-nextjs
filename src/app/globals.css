@@ -1242,8 +1242,13 @@ a {
     position: relative;
     z-index: 1;
     transform-style: preserve-3d;
+    animation: float-visual-y 8s ease-in-out infinite;
 }
 
+@keyframes float-visual-y {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+}
 
 
 
@@ -1273,26 +1278,16 @@ a {
     display: block;
     border-radius: 16px;
     transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
-    animation: float-interface 8s ease-in-out infinite;
     transform-style: preserve-3d;
-}
-
-@keyframes float-interface {
-    0%, 100% { transform: rotateY(-12deg) rotateX(5deg) translateY(0); }
-    50% { transform: rotateY(-12deg) rotateX(5deg) translateY(-15px); }
+    transform: rotateY(-12deg) rotateX(5deg);
 }
 
 .reverse .tier-interface-img {
-    animation: float-interface-reverse 8s ease-in-out infinite;
+    transform: rotateY(12deg) rotateX(5deg);
 }
 
-@keyframes float-interface-reverse {
-    0%, 100% { transform: rotateY(12deg) rotateX(5deg) translateY(0); }
-    50% { transform: rotateY(12deg) rotateX(5deg) translateY(-15px); }
-}
-
-.tier-interface-img:hover {
-    animation: none;
+.tier-interface-img:hover,
+.reverse .tier-interface-img:hover {
     transform: rotateY(0deg) rotateX(0deg) translateY(-5px) scale(1.03);
 }
 
