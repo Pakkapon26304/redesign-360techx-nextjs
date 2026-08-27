@@ -3,7 +3,7 @@ import React from 'react';
 export default function Redesign1SectionIbid() {
   return (
     <>
-      {/* RE-DESIGN 1: "ให้เราดูแลธุรกิจและ ระบบโลจิสติกส์ของคุณ" (Card grid with photo on top) */}
+      {/* RE-DESIGN 1: "เปิดประมูลงานโลจิสติกส์ออนไลน์" (Card grid with photo on top) */}
       <section className="reveal" style={{ padding: '6rem 2rem 8rem 2rem', background: 'var(--bg-main)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', marginBottom: '4rem' }}>
               <h2 style={{ fontSize: '3rem', color: 'var(--text-main)', fontWeight: '800', lineHeight: '1.2' }}>เปิดประมูล<span className="text-gradient">งานโลจิสติกส์ออนไลน์</span></h2>
@@ -137,11 +137,18 @@ export default function Redesign1SectionIbid() {
                     .expandable-card:hover {
                         flex: none !important;
                     }
+                    .expandable-header {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
                     .expandable-text-group,
                     .expandable-container:not(:hover) .expandable-card:first-child .expandable-text-group {
                         opacity: 1 !important;
                         transform: translateY(0) !important;
                         width: 100% !important;
+                    }
+                    .expandable-title {
+                        white-space: normal;
                     }
                     .expandable-desc {
                         min-width: unset;
@@ -164,7 +171,7 @@ export default function Redesign1SectionIbid() {
                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
                               </div>
                               <div className="expandable-text-group">
-                                  <h3 className="expandable-title">ประหยัดต้นทุน และได้ราคาที่ดี</h3>
+                                  <h3 className="expandable-title">ช่วยลดต้นทุน และได้ราคาที่ดีที่สุด</h3>
                                   <p className="expandable-desc">ระบบประมูลงานขนส่งออนไลน์ทำให้ผู้ประกอบการได้รับราคาที่ดีที่สุด ทำให้ประหยัดต้นทุนของสินค้า</p>
                               </div>
                           </div>
@@ -198,7 +205,7 @@ export default function Redesign1SectionIbid() {
                                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
                               </div>
                               <div className="expandable-text-group">
-                                  <h3 className="expandable-title">จัดหาผู้ขนส่งที่มีประสิทธิภาพ</h3>
+                                  <h3 className="expandable-title">จัดหาผู้ให้บริการขนส่ง ที่มีประสิทธิภาพ</h3>
                                   <p className="expandable-desc">iBID มีเกณฑ์คัดกรองผู้ให้บริการขนส่ง เลือกผู้มีประสบการณ์ ตรงตามมาตรฐาน และเอกสารถูกต้อง</p>
                               </div>
                           </div>
