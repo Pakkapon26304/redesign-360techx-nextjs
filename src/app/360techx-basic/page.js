@@ -140,7 +140,26 @@ export default function BasicPage() {
             .image-content { order: 1; }
         }
 
-        
+        .basic-interface-img {
+            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+            transform-style: preserve-3d;
+        }
+        .breakout-right .basic-interface-img {
+            transform: rotateY(-12deg) rotateX(5deg);
+        }
+        .breakout-left .basic-interface-img {
+            transform: rotateY(12deg) rotateX(5deg);
+        }
+        .basic-interface-img:hover {
+            transform: rotateY(0deg) rotateX(0deg) translateY(-5px) scale(1.03) !important;
+        }
+        @media(max-width: 1024px) {
+            .breakout-right .basic-interface-img,
+            .breakout-left .basic-interface-img {
+                transform: rotateY(0deg) rotateX(0deg) !important;
+            }
+        }
+
       `}} />
       
       {/* Hero Section */}
@@ -180,7 +199,7 @@ export default function BasicPage() {
               <p style={{ color: 'var(--text-muted)', fontSize: '1.15rem', maxWidth: '900px', margin: '0 auto', lineHeight: '1.6' }}>ระบบ Transportation Management System หรือ TMS ระบบที่ช่วยบริหารและจัดการการขนส่งพื้นฐานที่ช่วยให้มองเห็นภาพรวมธุรกิจโดยรวมของงานขนส่งทั้งหมดไว้ในที่เดียว</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(450px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 450px), 1fr))', gap: '2rem' }}>
               {/* Service 1 */}
               <div className="glass-card hover-lift" style={{ padding: '3rem', borderRadius: '32px' }}>
                   <div style={{ background: 'rgba(6, 182, 212, 0.1)', width: '60px', height: '60px', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.5rem', color: 'var(--primary)' }}>
@@ -245,14 +264,14 @@ export default function BasicPage() {
               </ul>
           </div>
           <div className="image-content">
-              <img src="/Logo-interface/Basic-กำลังขนส่ง.jpg" alt="สร้างงานขนส่งได้เร็ว" className="hover-lift" style={{ width: '100%', display: 'block', objectFit: 'cover', borderRadius: '16px', boxShadow: '-10px 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/interface-page-basic/createbooking-basic.png" alt="สร้างงานขนส่งได้เร็ว" className="basic-interface-img" style={{ width: '100%', display: 'block', objectFit: 'cover', borderRadius: '16px' }} />
           </div>
       </section>
 
       {/* Split Features Section 2 */}
       <section className="breakout-left reveal" style={{ marginBottom: '6rem' }}>
           <div className="image-content">
-              <img src="/Logo-interface/Basic-กำลังขนส่ง.jpg" alt="Check-in อัตโนมัติ" className="hover-lift" style={{ width: '100%', display: 'block', objectFit: 'cover', borderRadius: '16px', boxShadow: '10px 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/interface-page-basic/update-status-basic.png" alt="Check-in อัตโนมัติ" className="basic-interface-img" style={{ width: '100%', display: 'block', objectFit: 'cover', borderRadius: '16px' }} />
           </div>
           <div className="text-content">
               <h2 style={{ fontSize: '2.5rem', lineHeight: '1.25', marginBottom: '2.5rem', letterSpacing: '-0.5px' }}>ตัวช่วย <span className="text-gradient">Check-in อัตโนมัติ</span></h2>
@@ -305,7 +324,7 @@ export default function BasicPage() {
               </ul>
           </div>
           <div className="image-content">
-              <img src="/Logo-interface/Basic-กำลังขนส่ง.jpg" alt="ติดตามสถานะงานขนส่ง" className="hover-lift" style={{ width: '100%', display: 'block', objectFit: 'cover', borderRadius: '16px', boxShadow: '-10px 20px 40px rgba(0,0,0,0.1)' }} />
+              <img src="/interface-page-basic/share-booking-basic.png" alt="ติดตามสถานะงานขนส่ง" className="basic-interface-img" style={{ width: '100%', display: 'block', objectFit: 'cover', borderRadius: '16px' }} />
           </div>
       </section>
 

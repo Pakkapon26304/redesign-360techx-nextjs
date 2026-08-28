@@ -137,11 +137,18 @@ export default function Redesign1SectionBasic() {
                     .expandable-card:hover {
                         flex: none !important;
                     }
+                    .expandable-header {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
                     .expandable-text-group,
                     .expandable-container:not(:hover) .expandable-card:first-child .expandable-text-group {
                         opacity: 1 !important;
                         transform: translateY(0) !important;
                         width: 100% !important;
+                    }
+                    .expandable-title {
+                        white-space: normal;
                     }
                     .expandable-desc {
                         min-width: unset;
