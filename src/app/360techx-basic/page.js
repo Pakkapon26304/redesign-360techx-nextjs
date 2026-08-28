@@ -5,7 +5,7 @@ import StatsSummarySectionBasic from './components/StatsSummarySectionBasic';
 import TestimonialSectionBasic from './components/TestimonialSectionBasic';
 import FaqSectionBasic from './components/FaqSectionBasic';
 import HomePricingSectionBasic from './components/HomePricingSectionBasic';
-import HomeCustomerLogosSectionBasic from './components/HomeCustomerLogosSectionBasic';
+import CustomerLogosSectionBasic from './components/CustomerLogosSectionBasic';
 
 export const metadata = {
   title: '360TECHX Basic | ระบบจัดการขนส่งสำหรับ SME',
@@ -331,7 +331,7 @@ export default function BasicPage() {
             <Redesign1SectionBasic />
       {/* <StatsSummarySectionBasic /> */}
       <HomePricingSectionBasic />
-      <HomeCustomerLogosSectionBasic />
+      <CustomerLogosSectionBasic />
       {/* <TestimonialSectionBasic /> */}
       {/* <FaqSectionBasic /> */}
 
