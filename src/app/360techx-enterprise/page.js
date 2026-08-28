@@ -6,6 +6,7 @@ import TmsEnterpriseFeature1Section from './components/TmsEnterpriseFeature1Sect
 import TmsEnterpriseFeature2Section from './components/TmsEnterpriseFeature2Section';
 import TmsEnterpriseFeature3Section from './components/TmsEnterpriseFeature3Section';
 import TmsEnterpriseFeature4Section from './components/TmsEnterpriseFeature4Section';
+import TmsEnterpriseIntegrationSection from './components/TmsEnterpriseIntegrationSection';
 import TmsEnterpriseBusinessFlowSection from './components/TmsEnterpriseBusinessFlowSection';
 import TmsEnterpriseServicesSection from './components/TmsEnterpriseServicesSection';
 import TmsEnterprisePricingSection from './components/TmsEnterprisePricingSection';
@@ -92,6 +93,7 @@ export default function TmsEnterprisePage() {
       <TmsEnterpriseFeature2Section />
       <TmsEnterpriseFeature3Section />
       <TmsEnterpriseFeature4Section />
+      <TmsEnterpriseIntegrationSection />
       <TmsEnterpriseBusinessFlowSection />
       <TmsEnterpriseServicesSection />
       <TmsEnterprisePricingSection />
