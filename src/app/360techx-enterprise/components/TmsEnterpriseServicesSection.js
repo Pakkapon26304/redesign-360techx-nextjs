@@ -29,7 +29,7 @@ export default function TmsEnterpriseServicesSection() {
                     </ul>
                 </div>
                 <div className="bento-image-wrap">
-                    <img src="/Logo-interface/LOGISTICS DIGITAL_COMMUNITY.jpeg" alt="Consultation Mockup" />
+                    <img src="/interface-page-enterprise/service-consultation.jpg" alt="Consultation Mockup" />
                 </div>
             </div>
 
@@ -54,7 +54,7 @@ export default function TmsEnterpriseServicesSection() {
                     </ul>
                 </div>
                 <div className="bento-image-wrap">
-                    <img src="/Logo-interface/CONVERGENT_PROCESSES.jpeg" alt="Customization Mockup" />
+                    <img src="/interface-page-enterprise/service-customization.jpg" alt="Customization Mockup" />
                 </div>
             </div>
 
@@ -75,7 +75,7 @@ export default function TmsEnterpriseServicesSection() {
                     </ul>
                 </div>
                 <div className="bento-image-wrap">
-                    <img src="/Logo-interface/CENTRALIZED_ECOSYSTEM.jpeg" alt="Support Mockup" />
+                    <img src="/interface-page-enterprise/service-support.jpg" alt="Support Mockup" />
                 </div>
             </div>
 
@@ -96,7 +96,7 @@ export default function TmsEnterpriseServicesSection() {
                     </ul>
                 </div>
                 <div className="bento-image-wrap">
-                    <img src="/Logo-interface/Employees_looking_at_tablet_2K_202608131136 (1).jpeg" alt="Integration Mockup" />
+                    <img src="/interface-page-enterprise/service-system-integration.jpeg" alt="Integration Mockup" />
                 </div>
             </div>
 
