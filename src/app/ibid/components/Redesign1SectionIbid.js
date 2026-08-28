@@ -95,7 +95,8 @@ export default function Redesign1SectionIbid() {
                     transform: translateY(30px);
                     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
                     transition-delay: 0s;
-                    width: 350px; /* Force width so it doesn't reflow horizontally */
+                    width: 650px; /* Force width so it doesn't reflow horizontally */
+                    max-width: 100%;
                     pointer-events: none;
                 }
                 
@@ -167,9 +168,6 @@ export default function Redesign1SectionIbid() {
                       <div className="expandable-overlay"></div>
                       <div className="expandable-content-wrapper">
                           <div className="expandable-header">
-                              <div className="expandable-icon-container">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                              </div>
                               <div className="expandable-text-group">
                                   <h3 className="expandable-title">ช่วยลดต้นทุน และได้ราคาที่ดีที่สุด</h3>
                                   <p className="expandable-desc">ระบบประมูลงานขนส่งออนไลน์ทำให้ผู้ประกอบการได้รับราคาที่ดีที่สุด ทำให้ประหยัดต้นทุนของสินค้า</p>
@@ -184,9 +182,6 @@ export default function Redesign1SectionIbid() {
                       <div className="expandable-overlay"></div>
                       <div className="expandable-content-wrapper">
                           <div className="expandable-header">
-                              <div className="expandable-icon-container">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                              </div>
                               <div className="expandable-text-group">
                                   <h3 className="expandable-title">ประหยัดเวลา และโปร่งใส</h3>
                                   <p className="expandable-desc">สามารถทราบราคาประมูลงานขนส่งสินค้าได้อย่างรวดเร็ว ตรวจสอบได้ และไม่ต้องจัดการเกี่ยวกับเอกสาร</p>
@@ -201,9 +196,6 @@ export default function Redesign1SectionIbid() {
                       <div className="expandable-overlay"></div>
                       <div className="expandable-content-wrapper">
                           <div className="expandable-header">
-                              <div className="expandable-icon-container">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
-                              </div>
                               <div className="expandable-text-group">
                                   <h3 className="expandable-title">จัดหาผู้ให้บริการขนส่ง ที่มีประสิทธิภาพ</h3>
                                   <p className="expandable-desc">iBID มีเกณฑ์คัดกรองผู้ให้บริการขนส่ง เลือกผู้มีประสบการณ์ ตรงตามมาตรฐาน และเอกสารถูกต้อง</p>

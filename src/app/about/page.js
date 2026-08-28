@@ -77,7 +77,7 @@ export default function AboutUsPage() {
       <HomeTimelineSection />
 
       {/* ================= CTA ================= */}
-      <section style={{ background: 'linear-gradient(rgba(10, 15, 29, 0.75), rgba(10, 15, 29, 0.75)), url("/Office-360TRUCK/S__283992105.jpg") center/cover no-repeat', padding: '8rem 2rem', textAlign: 'center', color: 'white', position: 'relative' }}>
+      <section style={{ background: 'linear-gradient(rgba(10, 15, 29, 0.75), rgba(10, 15, 29, 0.75)), url("/Office-360TRUCK/310452082_786540268976222_702777566473144756_n.jpeg") center/cover no-repeat', padding: '8rem 2rem', textAlign: 'center', color: 'white', position: 'relative' }}>
           <h2 style={{ fontSize: '2.8rem', fontWeight: '700', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto', lineHeight: '1.4', marginBottom: '1.5rem', letterSpacing: '-1px' }}>พร้อมยกระดับธุรกิจของคุณหรือยัง?</h2>
           <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.8)', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto' }}>
             ให้ทีมผู้เชี่ยวชาญของเราช่วยออกแบบระบบโลจิสติกส์ที่เหมาะกับคุณที่สุด ปรึกษาฟรี ไม่มีค่าใช้จ่าย

@@ -6,7 +6,7 @@ export default function Redesign1SectionBasic() {
       {/* RE-DESIGN 1: "ให้เราดูแลธุรกิจและ ระบบโลจิสติกส์ของคุณ" (Card grid with photo on top) */}
       <section className="reveal" style={{ padding: '6rem 2rem 8rem 2rem', background: 'var(--bg-main)' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center', marginBottom: '4rem' }}>
-              <h2 style={{ fontSize: '3rem', color: 'var(--text-main)', fontWeight: '800', lineHeight: '1.2' }}>บริการและ<span className="text-gradient">สิทธิประโยชน์จากระบบ TMS Basic</span></h2>
+              <h2 style={{ fontSize: '3rem', color: 'var(--text-main)', fontWeight: '800', lineHeight: '1.2' }}>บริการและ<span className="text-gradient">สิทธิประโยชน์</span>จากระบบ TMS Basic</h2>
           </div>
           
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -95,7 +95,8 @@ export default function Redesign1SectionBasic() {
                     transform: translateY(30px);
                     transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
                     transition-delay: 0s;
-                    width: 350px; /* Force width so it doesn't reflow horizontally */
+                    width: 650px; /* Force width so it doesn't reflow horizontally */
+                    max-width: 100%;
                     pointer-events: none;
                 }
                 
@@ -163,15 +164,12 @@ export default function Redesign1SectionBasic() {
               <div className="expandable-container">
                   {/* Card 1 */}
                   <div className="expandable-card">
-                      <img src="/Logo-interface/CONVERGENT_PROCESSES.jpeg" className="expandable-bg" alt="ประหยัดต้นทุน" />
+                      <img src="/Logo-interface/LOGISTICS DIGITAL_COMMUNITY.jpeg" className="expandable-bg" alt="ประหยัดต้นทุน" />
                       <div className="expandable-overlay"></div>
                       <div className="expandable-content-wrapper">
                           <div className="expandable-header">
-                              <div className="expandable-icon-container">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                              </div>
                               <div className="expandable-text-group">
-                                  <h3 className="expandable-title">รับการแนะนำงานเพิ่มเติมจาก 360TRUCK</h3>
+                                  <h3 className="expandable-title">รับงานเพิ่มเติมจาก 360TRUCK</h3>
                                   <p className="expandable-desc">ไม่ใช่แค่ได้ระบบ แต่ยังได้รับการแนะนำงานขนส่งคุณภาพ จับคู่งานขนส่งเที่ยวกลับ หรืองาน ที่เหมาะสมกับรถและเส้นทางของคุณ</p>
                               </div>
                           </div>
@@ -180,15 +178,12 @@ export default function Redesign1SectionBasic() {
                   
                   {/* Card 2 */}
                   <div className="expandable-card">
-                      <img src="/Logo-interface/CENTRALIZED_ECOSYSTEM.jpeg" className="expandable-bg" alt="ประหยัดเวลา" />
+                      <img src="/Logo-interface/notification-insurance.jpeg" className="expandable-bg" alt="ประหยัดเวลา" />
                       <div className="expandable-overlay"></div>
                       <div className="expandable-content-wrapper">
                           <div className="expandable-header">
-                              <div className="expandable-icon-container">
-                                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                              </div>
                               <div className="expandable-text-group">
-                                  <h3 className="expandable-title">ช่วยเตือนเมื่อประกันหมดกับ “360ขยันบอก”</h3>
+                                  <h3 className="expandable-title">360ขยันบอก เตือนเมื่อประกันหมด</h3>
                                   <p className="expandable-desc">ระบบแจ้งเตือนอัตโนมัติ เมื่อมีเอกสารใกล้หมดอายุ หมดกังวลเรื่องลืมต่อประกันภัย เพราะ ระบบใส่ใจ คุ้มครองความปลอดภัยให้คุณ</p>
                               </div>
                           </div>
