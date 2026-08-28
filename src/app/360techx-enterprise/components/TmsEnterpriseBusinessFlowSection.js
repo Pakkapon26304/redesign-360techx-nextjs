@@ -3,18 +3,7 @@ import React from 'react';
 export default function TmsEnterpriseBusinessFlowSection() {
     return (
         <section style={{ padding: '6rem 2rem', position: 'relative', overflow: 'hidden' }}>
-            {/* Background Image with top/bottom edge fading */}
-            <div style={{
-                position: 'absolute',
-                top: 0, left: 0, width: '100%', height: '100%',
-                backgroundImage: 'url("/tms-picture/flowbusiness.jpg")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                opacity: 0.08,
-                zIndex: 0,
-                WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
-                maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)'
-            }}></div>
+
 
             {/* Decorative background glow */}
             <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '80%', height: '80%', background: 'radial-gradient(circle, var(--primary) 0%, transparent 70%)', opacity: '0.05', zIndex: 0, filter: 'blur(80px)', pointerEvents: 'none' }}></div>

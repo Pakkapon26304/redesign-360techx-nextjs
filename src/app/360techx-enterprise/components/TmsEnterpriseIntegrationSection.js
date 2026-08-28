@@ -4,25 +4,25 @@ import React from 'react';
 export default function TmsEnterpriseIntegrationSection() {
   const cards = [
     {
-      title: "ผสานข้อมูลไร้รอยต่อ",
+      title: <>ผสานข้อมูล<span className="text-gradient">ไร้รอยต่อ</span></>,
       desc: "ซิงค์ข้อมูลกับระบบ ERP สมบูรณ์แบบ รองรับทุกสเตปของธุรกิจ"
     },
     {
-      title: "ดึงออเดอร์อัตโนมัติ",
+      title: <>ดึงออเดอร์<span className="text-gradient">อัตโนมัติ</span></>,
       desc: "แปลง Sales Order และ Delivery Order เป็นแผนจัดส่งทันที"
     },
     {
-      title: "อัปเดตสถานะ Real-time",
+      title: <>อัปเดตสถานะ <span className="text-gradient">Real-time</span></>,
       desc: "ส่งข้อมูล Shipment กลับระบบหลักขององค์กรอย่างแม่นยำ"
     },
     {
-      title: "จัดการบิลลิ่งครบวงจร",
+      title: <>จัดการบิลลิ่ง<span className="text-gradient">ครบวงจร</span></>,
       desc: "กระทบยอดบัญชีและเคลียร์ค่าขนส่งจบในที่เดียว"
     }
   ];
 
   return (
-    <section className="reveal" style={{ position: 'relative', overflow: 'hidden', padding: '8rem 2rem', color: '#fff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <section style={{ position: 'relative', overflow: 'hidden', padding: '8rem 2rem', color: '#fff', minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
       <div style={{ 
         position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0, overflow: 'hidden', pointerEvents: 'none',
         WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, transparent 5%, black 20%, black 80%, transparent 95%, transparent 100%)',
@@ -41,7 +41,7 @@ export default function TmsEnterpriseIntegrationSection() {
       <div style={{ position: 'relative', zIndex: 1, maxWidth: '1440px', width: '100%', margin: '0 auto' }}>
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h1 style={{ fontSize: '3rem', fontWeight: '800', lineHeight: '1.2', marginBottom: '1.5rem', color: '#fff' }}>
-                Seamless ERP & WMS Integration
+                Seamless <span className="text-gradient">ERP & WMS Integration</span>
             </h1>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.85)', maxWidth: '800px', margin: '0 auto' }}>
                 เชื่อมต่อทุกระบบจัดการชั้นนำ ปลดล็อกศักยภาพงานขนส่งด้วย 360 Integration Agent
@@ -87,11 +87,11 @@ export default function TmsEnterpriseIntegrationSection() {
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}>
             {cards.map((card, idx) => (
-                <div key={idx} className="glass-card hover-lift" style={{ background: 'rgba(255, 255, 255, 0.1)', backdropFilter: 'blur(10px)', padding: '2rem', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.2)' }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', marginBottom: '1rem', fontWeight: '700' }}>
+                <div key={idx} className="glass-card hover-lift" style={{ background: 'linear-gradient(145deg, #1a1f2e, #0a0f16)', padding: '2.5rem 2rem', borderRadius: '16px', border: '1px solid rgba(255, 255, 255, 0.1)', boxShadow: '0 10px 30px rgba(0,0,0,0.5)' }}>
+                    <h3 style={{ fontSize: '1.4rem', marginBottom: '1rem', fontWeight: '700', color: '#fff' }}>
                         {card.title}
                     </h3>
-                    <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: '1.6', margin: 0 }}>
+                    <p style={{ color: 'rgba(255,255,255,0.9)', lineHeight: '1.6', margin: 0 }}>
                         {card.desc}
                     </p>
                 </div>

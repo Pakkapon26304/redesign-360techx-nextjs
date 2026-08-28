@@ -92,7 +92,7 @@ export default function TmsEnterprisePage() {
       <TmsEnterpriseFeature1Section />
       <TmsEnterpriseFeature2Section />
       <TmsEnterpriseFeature3Section />
-      <TmsEnterpriseFeature4Section />
+      {/* <TmsEnterpriseFeature4Section /> */}
       <TmsEnterpriseIntegrationSection />
       <TmsEnterpriseBusinessFlowSection />
       <TmsEnterpriseServicesSection />
