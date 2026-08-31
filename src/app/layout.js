@@ -11,6 +11,11 @@ const kanit = Kanit({ subsets: ['thai', 'latin'], weight: ['300', '400', '600'],
 export const metadata = {
   title: '360TECHX - ระบบจัดการขนส่ง TMS อันดับ 1',
   description: 'แพลตฟอร์มบริหารจัดการงานขนส่งครบวงจร (TMS) ที่ดีที่สุดในไทย',
+  icons: {
+    icon: '/icon-360techx.svg',
+    shortcut: '/icon-360techx.svg',
+    apple: '/icon-360techx.svg',
+  },
 };
 
 export default function RootLayout({ children }) {
