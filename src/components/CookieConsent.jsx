@@ -7,13 +7,20 @@ export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // ในกรณีใช้งานจริง จะมีการเช็ค localStorage ว่าเคยจำค่าไว้หรือยัง
-    // ตอนนี้เราหน่วงเวลา 1 วินาทีแล้วค่อยให้เด้งขึ้นมาแบบ Mockup
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 1000);
-    return () => clearTimeout(timer);
+    // ตรวจสอบว่าเคยให้ความยินยอมหรือยัง
+    const hasConsented = localStorage.getItem('cookie-consent');
+    if (!hasConsented) {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
   }, []);
+
+  const handleAccept = () => {
+    localStorage.setItem('cookie-consent', 'accepted');
+    setIsVisible(false);
+  };
 
   if (!isVisible) return null;
 
@@ -75,22 +82,22 @@ export default function CookieConsent() {
             <span>🍪</span> นโยบายการใช้คุกกี้ (Cookie Policy)
           </h4>
           <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', lineHeight: '1.5' }}>
-            เว็บไซต์นี้ใช้คุกกี้เพื่อมอบประสบการณ์การใช้งานที่ดีที่สุดแก่คุณ รวมถึงเพื่อวิเคราะห์การเข้าชมและนำเสนอโฆษณาที่ตรงกับความสนใจของคุณ การใช้งานเว็บไซต์นี้ถือเป็นการยอมรับ <Link href="#" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</Link> ของเรา
+            เว็บไซต์นี้ใช้คุกกี้เพื่อมอบประสบการณ์การใช้งานที่ดีที่สุดแก่คุณ รวมถึงเพื่อวิเคราะห์การเข้าชมและนำเสนอโฆษณาที่ตรงกับความสนใจของคุณ การใช้งานเว็บไซต์นี้ถือเป็นการยอมรับ <Link href="/privacy-policy" style={{ color: 'var(--primary)', textDecoration: 'underline' }}>นโยบายความเป็นส่วนตัว</Link> ของเรา
           </p>
         </div>
         
         <div className="cookie-buttons">
           <button 
             className="btn btn-outline" 
-            style={{ flex: 1, textAlign: 'center', padding: '0.6rem 1rem', fontSize: '0.9rem' }}
+            style={{ flex: 1, textAlign: 'center', padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap' }}
             onClick={() => setIsVisible(false)}
           >
             ตั้งค่าคุกกี้
           </button>
           <button 
             className="btn btn-primary" 
-            style={{ flex: 1, textAlign: 'center', padding: '0.6rem 1rem', fontSize: '0.9rem' }}
-            onClick={() => setIsVisible(false)}
+            style={{ flex: 1, textAlign: 'center', padding: '0.6rem 1rem', fontSize: '0.9rem', whiteSpace: 'nowrap' }}
+            onClick={handleAccept}
           >
             ยอมรับทั้งหมด
           </button>
