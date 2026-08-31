@@ -18,7 +18,7 @@ export default function LoadMoreButton() {
   return (
     <div className="load-more-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem', marginBottom: '2rem' }}>
       <button 
-        className="btn-load" 
+        className="btn btn-outline" 
         onClick={handleLoadMore} 
         disabled={isLoading}
         style={{ 
