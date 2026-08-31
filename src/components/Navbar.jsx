@@ -32,7 +32,16 @@ export default function Navbar() {
     };
 
     return (
-        <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${pathname === '/about' ? 'force-dark-top' : ''}`} id="navbar">
+        <nav 
+            className={`navbar ${scrolled ? 'scrolled' : ''}`} 
+            id="navbar"
+            style={{ 
+                background: 'var(--nav-bg)', 
+                backdropFilter: 'var(--glass-blur)', 
+                WebkitBackdropFilter: 'var(--glass-blur)',
+                borderBottom: '1px solid var(--border-color)'
+            }}
+        >
             <div className="nav-container">
                 <Link href="/" className="logo-link">
                     <img src="/Logo-interface/360techx_logo_horizontal_nobg_white.png" className="logo-img dark-logo" />
