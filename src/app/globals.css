@@ -2796,6 +2796,14 @@ a {
     background: rgba(50,255,152,0.1);
 }
 
+[data-theme="light"] .btn.btn-outline {
+    border: 1px solid var(--secondary);
+    color: var(--secondary);
+}
+[data-theme="light"] .btn.btn-outline:hover {
+    background: rgba(3, 102, 94, 0.1);
+}
+
 @media (max-width: 768px) {
     .hide-on-mobile {
         display: none !important;
