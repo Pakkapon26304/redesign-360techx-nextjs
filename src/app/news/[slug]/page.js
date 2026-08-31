@@ -1,5 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
+import ContactInfoFormSection from '../../contact/components/ContactInfoFormSection';
+import RelatedPosts from '../components/RelatedPosts';
 
 export async function generateMetadata({ params }) {
   // ข้อมูลจำลองสำหรับ Metadata
@@ -40,8 +42,6 @@ export default async function ArticlePage({ params }) {
   const post = {
     title: 'ทำไมการวางแผนเส้นทางขนส่งให้แม่นยำถึงช่วยประหยัดเงินได้มหาศาล?',
     date: '18 สิงหาคม 2026',
-    readTime: '5 นาที',
-    views: '1,204',
     category: 'Logistics Strategy',
     featuredImage: '/Logo-interface/CONVERGENT_PROCESSES.jpeg',
     tags: ['TMS', 'Logistics', 'CostSaving'],
@@ -86,10 +86,19 @@ export default async function ArticlePage({ params }) {
           <div style={{ marginBottom: '2.5rem' }}>
               <div style={{ display: 'inline-block', background: 'linear-gradient(135deg, #32ff98 0%, #03665e 100%)', color: '#ffffff', padding: '6px 16px', borderRadius: '50px', fontSize: '0.95rem', fontWeight: '700', marginBottom: '1.5rem', boxShadow: '0 4px 12px rgba(3, 102, 94, 0.3)' }}>{post.category}</div>
               <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: '800', marginBottom: '1.5rem', lineHeight: 1.3, color: 'var(--text-main)', letterSpacing: '-0.5px' }} dangerouslySetInnerHTML={{ __html: post.title }}></h1>
-              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', color: 'var(--text-muted)', fontSize: '1rem', flexWrap: 'wrap' }}>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>🗓️ {post.date}</span>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>⏱️ อ่าน {post.readTime}</span>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>👀 เข้าชม {post.views} ครั้ง</span>
+              <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center', color: 'var(--text-muted)', fontSize: '1rem', flexWrap: 'wrap', width: '100%' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                  <img src={post.author.avatar} alt={post.author.name} style={{ width: '40px', height: '40px', objectFit: 'cover', borderRadius: '50%' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span style={{ fontWeight: '600', color: 'var(--text-main)', lineHeight: 1.2 }}>{post.author.name}</span>
+                    <span style={{ fontSize: '0.85rem' }}>สร้างเมื่อวันที่ : {post.date}</span>
+                  </div>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginLeft: 'auto' }}>
+                  <button style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#1877F2', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem' }}>f</button>
+                  <button style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#000000', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem' }}>X</button>
+                  <button style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#0A66C2', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem' }}>in</button>
+                </div>
               </div>
           </div>
 
@@ -106,148 +115,77 @@ export default async function ArticlePage({ params }) {
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
 
-          {/* CTA Section (Appended after WordPress Content) */}
-          <div className="glass-card" style={{ padding: '2.5rem', borderRadius: '16px', background: 'var(--bg-card)', border: '1px solid var(--border-color)', margin: '4rem 0' }}>
-            <h2 style={{ color: 'var(--primary)', fontSize: '1.8rem', marginBottom: '1rem', fontWeight: 700 }}>ระบบ TMS จาก 360TECHX</h2>
-            <p style={{ marginBottom: '1.5rem', color: 'var(--text-muted)', lineHeight: 1.8 }}>
-              ฟีเจอร์เด่นของ 360TECHX TMS ที่มีระบบ Dashboard ที่ใช้งานง่าย สามารถเปิดดูข้อมูลสำคัญ เช่น ต้นทุนค่าแรง ค่าน้ำมัน และรายได้ของแต่ละเส้นทางอย่างละเอียด ช่วยให้ตัดสินใจปรับปรุงแผนงาน เพิ่มประสิทธิภาพ และลดต้นทุนโดยไม่ต้องเสียเวลาคำนวณเอง
-            </p>
-            <Link href="/contact" className="btn btn-primary" style={{ display: 'inline-block' }}>ติดต่อรับคำปรึกษาฟรี</Link>
-          </div>
 
-          <hr style={{ border: 'none', borderTop: '1px solid var(--border-color)', margin: '3rem 0' }} />
-
-          {/* 1. Tags & Social Share */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', marginBottom: '3rem' }}>
-            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <span style={{ fontWeight: 'bold', color: 'var(--text-main)' }}>Tags:</span>
-              {post.tags.map(tag => (
-                <span key={tag} style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderRadius: '8px', fontSize: '0.9rem', color: 'var(--text-muted)' }}>#{tag}</span>
-              ))}
-            </div>
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-              <span style={{ fontWeight: 'bold', color: 'var(--text-main)' }}>Share:</span>
-              <button style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#1877F2', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>f</button>
-              <button style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#1DA1F2', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>X</button>
-              <button style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#0A66C2', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>in</button>
-              <button style={{ width: '40px', height: '40px', borderRadius: '50%', background: '#00B900', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 'bold' }}>LINE</button>
-            </div>
-          </div>
-
-          {/* 2. Writer Info */}
-          <div className="glass-card" style={{ display: 'flex', gap: '1.5rem', padding: '2rem', borderRadius: '16px', background: 'var(--bg-card)', border: '1px solid var(--border-color)', marginBottom: '4rem', alignItems: 'flex-start' }}>
-            <img src={post.author.avatar} alt={post.author.name} style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '50%', border: '2px solid var(--primary)' }} />
-            <div>
-              <h3 style={{ color: 'var(--text-main)', fontSize: '1.3rem', marginBottom: '0.5rem' }}>{post.author.name}</h3>
-              <p style={{ fontSize: '1rem', marginBottom: '0.5rem', color: 'var(--text-muted)', lineHeight: 1.6 }}>{post.author.description}</p>
-              <Link href="#" style={{ color: 'var(--primary)', fontSize: '0.9rem', textDecoration: 'underline' }}>บทความทั้งหมดของผู้เขียน</Link>
-            </div>
-          </div>
-
-          {/* 3. Related Posts */}
-          <div>
-            <h3 style={{ color: 'var(--text-main)', fontSize: '1.5rem', marginBottom: '1.5rem', borderLeft: '4px solid var(--primary)', paddingLeft: '1rem' }}>บทความที่เกี่ยวข้อง (Related Posts)</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
-              <div className="glass-card hover-lift" style={{ borderRadius: '12px', overflow: 'hidden' }}>
-                <div style={{ height: '160px', background: 'url(/Logo-interface/CONVERGENT_PROCESSES.jpeg) center/cover' }}></div>
-                <div style={{ padding: '1.5rem' }}>
-                  <h4 style={{ color: 'var(--text-main)', fontSize: '1.1rem', marginBottom: '1rem', lineHeight: 1.4 }}>ทำความรู้จักระบบ WMS คลังสินค้าอัจฉริยะ</h4>
-                  <Link href="#" style={{ color: 'var(--primary)', fontSize: '0.9rem', fontWeight: 600 }}>อ่านต่อ &rarr;</Link>
-                </div>
-              </div>
-              <div className="glass-card hover-lift" style={{ borderRadius: '12px', overflow: 'hidden' }}>
-                <div style={{ height: '160px', background: 'url(/Office-360TRUCK/310931835_786540258976223_1593692212990799741_n.jpeg) center/cover' }}></div>
-                <div style={{ padding: '1.5rem' }}>
-                  <h4 style={{ color: 'var(--text-main)', fontSize: '1.1rem', marginBottom: '1rem', lineHeight: 1.4 }}>เทรนด์ Logistics 2026 ที่ต้องจับตา</h4>
-                  <Link href="#" style={{ color: 'var(--primary)', fontSize: '0.9rem', fontWeight: 600 }}>อ่านต่อ &rarr;</Link>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </article>
 
-        {/* ================= RIGHT SIDEBAR ================= */}
         <aside style={{ flex: '1 1 30%', minWidth: '300px', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           
-          {/* Recent / Popular Posts (Moved to Top, 5 Items) */}
-          <div className="glass-card" style={{ padding: '2rem', borderRadius: '16px', background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
-            <h3 style={{ color: 'var(--text-main)', fontSize: '1.4rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>🔥 บทความยอดฮิต</h3>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <img src="/Office-360TRUCK/310931835_786540258976223_1593692212990799741_n.jpeg" alt="thumb" style={{ width: '60px', height: '60px', borderRadius: '8px', objectFit: 'cover' }} />
-                <div>
-                  <h4 style={{ color: 'var(--text-main)', fontSize: '1rem', marginBottom: '0.2rem', lineHeight: 1.3 }}><Link href="#">เคล็ดลับลดต้นทุนขนส่งปี 2026</Link></h4>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>10 สิงหาคม 2026</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <img src="/Logo-interface/CONVERGENT_PROCESSES.jpeg" alt="thumb" style={{ width: '60px', height: '60px', borderRadius: '8px', objectFit: 'cover' }} />
-                <div>
-                  <h4 style={{ color: 'var(--text-main)', fontSize: '1rem', marginBottom: '0.2rem', lineHeight: 1.3 }}><Link href="#">เจาะลึกระบบ ERP สำหรับขนส่ง</Link></h4>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>5 สิงหาคม 2026</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <img src="/Logo-interface/360techx_logo_horizontal_nobg_white.png" alt="thumb" style={{ width: '60px', height: '60px', borderRadius: '8px', objectFit: 'contain', background: '#000' }} />
-                <div>
-                  <h4 style={{ color: 'var(--text-main)', fontSize: '1rem', marginBottom: '0.2rem', lineHeight: 1.3 }}><Link href="#">สัมภาษณ์พิเศษ CEO 360TRUCK</Link></h4>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>1 สิงหาคม 2026</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <img src="/Logo-interface/CONVERGENT_PROCESSES.jpeg" alt="thumb" style={{ width: '60px', height: '60px', borderRadius: '8px', objectFit: 'cover', filter: 'hue-rotate(90deg)' }} />
-                <div>
-                  <h4 style={{ color: 'var(--text-main)', fontSize: '1rem', marginBottom: '0.2rem', lineHeight: 1.3 }}><Link href="#">วิธีคำนวณกำไรต่อรอบให้แม่นยำ</Link></h4>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>28 กรกฎาคม 2026</span>
-                </div>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <img src="/Office-360TRUCK/310931835_786540258976223_1593692212990799741_n.jpeg" alt="thumb" style={{ width: '60px', height: '60px', borderRadius: '8px', objectFit: 'cover', filter: 'grayscale(50%)' }} />
-                <div>
-                  <h4 style={{ color: 'var(--text-main)', fontSize: '1rem', marginBottom: '0.2rem', lineHeight: 1.3 }}><Link href="#">5 ปัญหาคลาสสิกของธุรกิจขนส่ง</Link></h4>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>15 กรกฎาคม 2026</span>
-                </div>
-              </div>
+          {/* Custom Contact Card */}
+          <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
+            {/* Banner Image */}
+            <img src="/banner-cta/วางแผนงานขนส่งจาก3ชั่วโมงเหลือ3นาที.jpg" alt="Banner" style={{ width: '100%', height: 'auto', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }} />
+            
+            {/* Contact Form Section */}
+            <div className="sidebar-contact">
+              <ContactInfoFormSection />
             </div>
-          </div>
-
-          {/* Categories */}
-          <div className="glass-card" style={{ padding: '2rem', borderRadius: '16px', background: 'var(--bg-card)', border: '1px solid var(--border-color)' }}>
-            <h3 style={{ color: 'var(--text-main)', fontSize: '1.4rem', marginBottom: '1.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.5rem' }}>หมวดหมู่ (Categories)</h3>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-                <Link href="#" style={{ color: 'var(--text-muted)' }}>Logistics Strategy</Link>
-                <span style={{ background: 'rgba(50,255,152,0.1)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '50px', fontSize: '0.8rem' }}>12</span>
-              </li>
-              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-                <Link href="#" style={{ color: 'var(--text-muted)' }}>TMS Technology</Link>
-                <span style={{ background: 'rgba(50,255,152,0.1)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '50px', fontSize: '0.8rem' }}>8</span>
-              </li>
-              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-                <Link href="#" style={{ color: 'var(--text-muted)' }}>Supply Chain</Link>
-                <span style={{ background: 'rgba(50,255,152,0.1)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '50px', fontSize: '0.8rem' }}>15</span>
-              </li>
-              <li style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed rgba(255,255,255,0.1)', paddingBottom: '0.5rem' }}>
-                <Link href="#" style={{ color: 'var(--text-muted)' }}>Success Stories</Link>
-                <span style={{ background: 'rgba(50,255,152,0.1)', color: 'var(--primary)', padding: '2px 8px', borderRadius: '50px', fontSize: '0.8rem' }}>5</span>
-              </li>
-            </ul>
-          </div>
-
-          {/* Newsletter Signup */}
-          <div className="glass-card" style={{ padding: '2rem', borderRadius: '16px', background: 'var(--bg-card)', border: '1px solid var(--border-color)', textAlign: 'center' }}>
-            <h3 style={{ color: 'var(--text-main)', fontSize: '1.4rem', marginBottom: '0.5rem' }}>📬 รับข่าวสาร (Newsletter)</h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '1.5rem' }}>ไม่พลาดทุกเทรนด์และเคล็ดลับจากผู้เชี่ยวชาญ สมัครรับอีเมลได้เลย!</p>
-            <input type="email" placeholder="กรอกอีเมลของคุณ..." style={{ width: '100%', padding: '12px', borderRadius: '8px', border: '1px solid var(--border-color)', background: 'var(--bg-main)', color: 'var(--text-main)', marginBottom: '1rem' }} />
-            <button className="btn btn-primary" style={{ width: '100%' }}>สมัครรับข่าวสาร</button>
           </div>
 
         </aside>
       </div>
+      
+      {/* 4. Tags and Related Posts Full Width Section */}
+      <RelatedPosts post={post} />
 
       {/* สไตล์สำหรับจัดการ HTML ที่ได้มาจาก WordPress (wp-content) */}
       <style dangerouslySetInnerHTML={{__html: `
+        .sidebar-contact .tms-tiers {
+          padding: 0 !important;
+        }
+        .sidebar-contact .tier-row {
+          margin: 0 !important;
+          padding: 2rem 0 0 0 !important;
+        }
+        .sidebar-contact .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+        .sidebar-contact .tier-container {
+          display: flex !important;
+          flex-direction: column !important;
+          gap: 2rem !important;
+          width: 100% !important;
+        }
+        .sidebar-contact {
+          /* no extra padding needed here */
+        }
+        .sidebar-contact .tier-info {
+          display: none !important;
+        }
+        .sidebar-contact .tier-title {
+          font-size: 1.8rem !important;
+        }
+        .sidebar-contact .tier-benefits .benefit {
+          font-size: 0.9rem !important;
+        }
+        .sidebar-contact .contact-form-wrapper {
+          width: 100% !important;
+        }
+        .sidebar-contact .contact-form-wrapper form {
+          display: flex !important;
+          flex-direction: column !important;
+          width: 100% !important;
+        }
+        .sidebar-contact .contact-form-wrapper > div {
+          background: transparent !important;
+          border: none !important;
+          box-shadow: none !important;
+          padding: 0 1.5rem 1.5rem 1.5rem !important;
+          width: 100% !important;
+        }
+        
         .wp-content {
           font-size: 1.15rem;
           line-height: 1.8;
@@ -297,6 +235,7 @@ export default async function ArticlePage({ params }) {
           padding: 1.5rem;
           border-radius: 0 8px 8px 0;
         }
+
       `}} />
     </main>
   );
