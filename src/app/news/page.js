@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import LoadMoreButton from '@/components/LoadMoreButton';
 
 export default function Page() {
   return (
@@ -7,6 +8,20 @@ export default function Page() {
 
 
     <main className="news-page-container">
+
+        {/* Header & Filters */}
+        <div className="section-heading" style={{ marginBottom: '0.5rem' }}>
+            <h2><span className="text-gradient">ข่าวสารและโปรโมชั่น</span></h2>
+        </div>
+
+        <div className="filter-tabs">
+            <button className="filter-btn active">ทั้งหมด</button>
+            <button className="filter-btn">อัปเดตระบบ</button>
+            <button className="filter-btn">โปรโมชั่น</button>
+            <button className="filter-btn">ข่าวสารองค์กร</button>
+            <button className="filter-btn">เกร็ดความรู้ (Tips)</button>
+            <button className="filter-btn">กิจกรรม</button>
+        </div>
         
         {/* Featured Bento Section */}
         <section className="featured-bento">
@@ -16,7 +31,6 @@ export default function Page() {
                 <div className="bento-overlay"></div>
                 <div className="bento-content">
                     <div style={{ display: 'flex', gap: '0.5rem' }}>
-                        <span className="tag-pill primary">Highlight</span>
                         <span className="tag-pill">ข่าวสาร</span>
                     </div>
                     <h2 className="bento-title">360TECHX เปิดตัว TMS โฉมใหม่<br />ยกระดับวงการโลจิสติกส์ไทย</h2>
@@ -48,26 +62,12 @@ export default function Page() {
                 <img src="/Office-360TRUCK/310613192_786540602309522_3620945077409691797_n.jpeg" alt="Promotion" />
                 <div className="bento-overlay"></div>
                 <div className="bento-content">
-                    <span className="tag-pill" style={{ borderColor: 'var(--secondary-color)', color: 'var(--secondary-color)' }}>Promotion</span>
+                    <span className="tag-pill">Promotion</span>
                     <h3 className="bento-title">โปรโมชั่นพิเศษ! สมัครใช้งาน TMS รับสิทธิ์ฟรี 3 เดือนแรก</h3>
                 </div>
             </a>
         </section>
 
-        {/* Header & Filters */}
-        <div className="section-heading">
-            <h2><span className="text-gradient">ข่าวสารและโปรโมชั่น</span></h2>
-            <p>อัปเดตความเคลื่อนไหว กิจกรรม เทรนด์เทคโนโลยี และโปรโมชั่นสุดพิเศษเพื่อผู้ประกอบการขนส่งจาก 360TECHX</p>
-        </div>
-
-        <div className="filter-tabs">
-            <button className="filter-btn active">ทั้งหมด</button>
-            <button className="filter-btn">อัปเดตระบบ</button>
-            <button className="filter-btn">โปรโมชั่น</button>
-            <button className="filter-btn">ข่าวสารองค์กร</button>
-            <button className="filter-btn">เกร็ดความรู้ (Tips)</button>
-            <button className="filter-btn">กิจกรรม</button>
-        </div>
 
         {/* News Grid */}
         <div className="news-grid">
@@ -218,11 +218,51 @@ export default function Page() {
                     </div>
                 </div>
             </a>
+
+            {/* Card 7 */}
+            <a href="#" className="news-card">
+                <div className="news-img-wrap">
+                    <span className="card-tag">ข่าวสารองค์กร</span>
+                    <img src="/Office-360TRUCK/310497074_786540285642887_6994208460385202528_n.jpeg" alt="News" />
+                </div>
+                <div className="news-content">
+                    <div className="news-title-row">
+                        <h3 className="news-title">360TECHX ขยายทีมงาน รองรับการเติบโตของธุรกิจปี 2026</h3>
+                        <svg className="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                    <p className="news-snippet">ก้าวไปอีกขั้นกับทีมงานคุณภาพที่เพิ่มขึ้น เพื่อเตรียมพร้อมพัฒนาฟีเจอร์ระดับโลกให้ตอบสนองลูกค้ายิ่งกว่าเดิม</p>
+                    <div className="news-footer">
+                        <div className="author-avatar" style={{ background: '#10b981' }}>H</div>
+                        <div className="author-info">
+                            HR Team <span className="dot"></span> 5 ก.ค. 2026
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            {/* Card 8 */}
+            <a href="#" className="news-card">
+                <div className="news-img-wrap">
+                    <span className="card-tag">เกร็ดความรู้</span>
+                    <img src="/Office-360TRUCK/310561578_786540598976189_7453248759151350282_n.jpeg" alt="News" />
+                </div>
+                <div className="news-content">
+                    <div className="news-title-row">
+                        <h3 className="news-title">3 วิธีลดอุบัติเหตุบนท้องถนน สำหรับธุรกิจขนส่ง</h3>
+                        <svg className="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </div>
+                    <p className="news-snippet">แชร์เคล็ดลับความปลอดภัยที่ผู้ประกอบการรถบรรทุกสามารถนำไปปรับใช้ได้จริง เพื่อความอุ่นใจในการทำงาน</p>
+                    <div className="news-footer">
+                        <div className="author-avatar" style={{ background: '#f59e0b' }}>S</div>
+                        <div className="author-info">
+                            Safety Team <span className="dot"></span> 2 ก.ค. 2026
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
 
-        <div className="load-more-container">
-            <button className="btn-load">โหลดเพิ่มเติม (Load More)</button>
-        </div>
+        <LoadMoreButton />
 
     </main>
 

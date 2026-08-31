@@ -1925,9 +1925,8 @@ a {
         }
         .tag-pill {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            border: none;
             color: #ffffff;
             padding: 0.4rem 1rem;
             border-radius: 20px;
@@ -1936,6 +1935,7 @@ a {
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            width: fit-content;
         }
         .tag-pill.primary {
             background: var(--primary-color);
@@ -1987,15 +1987,15 @@ a {
         .filter-tabs {
             display: flex;
             gap: 0.8rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             overflow-x: auto;
-            padding-bottom: 1rem;
+            padding: 1rem 0.5rem 1rem 0.5rem;
             scrollbar-width: none;
         }
         .filter-tabs::-webkit-scrollbar { display: none; }
         .filter-btn {
             background: transparent;
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: var(--text-color);
             padding: 0.6rem 1.5rem;
             border-radius: 30px;
@@ -2006,17 +2006,16 @@ a {
             white-space: nowrap;
         }
         .filter-btn:hover {
-            border-color: var(--primary-color);
-            color: var(--primary-color);
+            border-color: var(--primary);
+            color: var(--primary);
+            box-shadow: 0 0 10px rgba(50, 255, 152, 0.2);
+            transform: translateY(-2px);
         }
         .filter-btn.active {
-            background: var(--text-color);
-            color: var(--bg-color);
-            border-color: var(--text-color);
-        }
-        [data-theme="light"] .filter-btn.active {
-            background: #1e293b;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 4px 15px rgba(3, 102, 94, 0.3);
         }
 
         /* --- News Grid --- */
@@ -2028,7 +2027,7 @@ a {
         }
         .news-card {
             background: var(--card-bg);
-            border: 1px solid var(--glass-border);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             border-radius: 20px;
             overflow: hidden;
             display: flex;
@@ -2038,12 +2037,13 @@ a {
             position: relative;
         }
         .news-card:hover {
-            border-color: var(--primary-color);
+            border-color: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
         [data-theme="light"] .news-card {
             background: #ffffff;
+            border-color: rgba(0, 0, 0, 0.08);
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
         .news-img-wrap {
@@ -2065,15 +2065,15 @@ a {
             position: absolute;
             top: 1rem;
             left: 1rem;
-            background: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(10px);
-            color: #fff;
-            padding: 0.3rem 0.8rem;
-            border-radius: 8px;
+            z-index: 10;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: #ffffff;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 600;
             text-transform: uppercase;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: none;
         }
         .news-content {
             padding: 1.5rem;
