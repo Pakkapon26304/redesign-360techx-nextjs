@@ -12,7 +12,7 @@ export default function TmsEnterpriseBusinessFlowSection() {
                 
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
                     <div style={{ display: 'inline-block', background: 'rgba(50,255,152,0.1)', color: 'var(--primary)', padding: '6px 16px', borderRadius: '50px', fontSize: '0.95rem', fontWeight: '700', marginBottom: '1.5rem' }}>BUSINESS FLOW</div>
-                    <h2 style={{ fontSize: '2.8rem', fontWeight: '800', letterSpacing: '-1px' }}>กระบวนการทำงาน<span className="text-gradient">แบบบูรณาการ</span></h2>
+                    <h2 style={{ fontSize: '2.8rem', fontWeight: '800', letterSpacing: '-1px' }}>กระบวนการทำงาน<span className="text-gradient">แบบไร้รอยต่อ</span></h2>
                 </div>
 
                 <div style={{ padding: '2rem 0', position: 'relative', overflowX: 'auto' }}>
@@ -30,7 +30,7 @@ export default function TmsEnterpriseBusinessFlowSection() {
                                     <h4>API Order</h4>
                                     <p>รองรับการเชื่อมต่อระบบ WMS ERP ชั้นนำระดับโลก</p>
                                     <div className="erp-logos">
-                                        <span>SAP</span> <span>Oracle</span> <span>Odoo</span>
+                                        <span>SAP</span> <span>Oracle</span> <span>Microsoft</span>
                                     </div>
                                 </div>
                             </div>
@@ -168,7 +168,7 @@ export default function TmsEnterpriseBusinessFlowSection() {
                                     <h4>API Cost Billing</h4>
                                     <p>Seamless Integration</p>
                                     <div className="erp-logos">
-                                        <span>SAP</span> <span>Oracle</span> <span>Odoo</span>
+                                        <span>SAP</span> <span>Oracle</span> <span>Microsoft</span>
                                     </div>
                                 </div>
                             </div>

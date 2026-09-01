@@ -2348,7 +2348,7 @@ a {
     color: #ffffff !important;
 }
 .erp-logos span:nth-child(3) {
-    background: #875A7B !important; /* Odoo Purple */
+    background: #5856D6 !important; /* Blue-Purple */
     color: #ffffff !important;
 }
 
@@ -2356,13 +2356,13 @@ a {
     position: absolute;
     top: -10px;
     right: 20px;
-    background: linear-gradient(135deg, #32ff98 0%, #03665e 100%) !important;
+    background: linear-gradient(135deg, #FF007A 0%, #7A00FF 50%, #00E5FF 100%) !important;
     color: #ffffff !important; 
     font-size: 0.65rem;
     font-weight: 800;
     padding: 4px 10px;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(50,255,152,0.3) !important;
+    box-shadow: 0 4px 12px rgba(122, 0, 255, 0.4) !important;
     animation: pulseAuto 2s infinite;
 }
 
@@ -2903,8 +2903,8 @@ html, body {
 
 /* User requested fade for enable-cards-grid */
 .enable-cards-grid {
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 2%, black 98%, transparent 100%);
 }
 
 /* User requested: Equal height for Business Flow Cards */

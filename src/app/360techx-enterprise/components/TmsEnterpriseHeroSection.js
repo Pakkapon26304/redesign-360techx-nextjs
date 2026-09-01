@@ -14,6 +14,10 @@ export default function TmsEnterpriseHeroSection() {
         </div>
         <div className="hero-content" style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem', width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', zIndex: '3' }}>
             <div style={{ maxWidth: '750px' }}>
+                {/* Logo */}
+                <img src="/Logo-interface/360techx-enterprise.png" alt="360TechX Enterprise" className="dark-logo" style={{ height: '60px', marginBottom: '1rem' }} />
+                <img src="/Logo-interface/360techx-enterprise-black.png" alt="360TechX Enterprise" className="light-logo" style={{ height: '60px', marginBottom: '1rem' }} />
+                
                 {/* Title */}
                 <h2 className="ent-hero-title">ระบบ TMS วางแผนและจัดการระบบขนส่ง <span className="text-gradient">สำหรับองค์กรขนาดใหญ่</span></h2>
                 
@@ -24,8 +28,7 @@ export default function TmsEnterpriseHeroSection() {
 
                 {/* Buttons */}
                 <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', marginBottom: '3rem' }}>
-                    <a href="#" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderRadius: '50px' }}>ปรึกษาการใช้งาน</a>
-                    <a href="https://docs.google.com/presentation/d/1OqAJ4d2zrXfw39FR3gKLZGrXEzNZw-55Z1wNchNYg5I/edit?slide=id.g3054ab80e5a_0_54#slide=id.g3054ab80e5a_0_54" target="_blank" className="btn btn-outline" style={{ background: 'rgba(128,128,128,0.1)', borderColor: 'rgba(128,128,128,0.3)', padding: '1rem 2rem', fontSize: '1.1rem', borderRadius: '50px' }}>ดาวน์โหลดคู่มือผลิตภัณฑ์</a>
+                    <a href="/contact" className="btn btn-primary" style={{ padding: '1rem 2rem', fontSize: '1.1rem', borderRadius: '50px' }}>ปรึกษาการใช้งาน</a>
                 </div>
             </div>
 
