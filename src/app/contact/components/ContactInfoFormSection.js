@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ContactInfoFormSection() {
   return (
-    <section className="tms-tiers" style={{ paddingTop: '5rem', paddingBottom: '3rem' }}>
+    <section className="tms-tiers" style={{ paddingTop: '5rem', paddingBottom: '0rem' }}>
         <div className="tier-row reveal">
             <div className="tier-container">
                 {/* Left: Contact Info */}

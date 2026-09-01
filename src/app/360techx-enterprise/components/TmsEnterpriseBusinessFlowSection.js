@@ -20,7 +20,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
                         
                         {/* Column 1: ORDER PLANNING */}
                         <div className="flow-column">
-                            <h3 className="flow-col-title">ORDER PLANNING</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem' }}>
+                                <img src="/interface-page-enterprise/icon-orderplanning-tms-enterprise.png" alt="Order Planning" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                                <h3 className="flow-col-title" style={{ marginBottom: 0 }}>ORDER PLANNING</h3>
+                            </div>
                             
                             <div className="flow-node">
                                 <div className="minimal-icon-box">
@@ -64,7 +67,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
 
                         {/* Column 2: JOB ASSIGNMENT */}
                         <div className="flow-column">
-                            <h3 className="flow-col-title">JOB ASSIGNMENT</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem' }}>
+                                <img src="/interface-page-enterprise/icon-job-assignment-tms-enterprise.png" alt="Job Assignment" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                                <h3 className="flow-col-title" style={{ marginBottom: 0 }}>JOB ASSIGNMENT</h3>
+                            </div>
                             
                             <div className="flow-node">
                                 <div className="minimal-icon-box">
@@ -111,7 +117,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
 
                         {/* Column 3: MONITORING */}
                         <div className="flow-column">
-                            <h3 className="flow-col-title">MONITORING</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem' }}>
+                                <img src="/interface-page-enterprise/icon-monitoring-tms-enterprise.png" alt="Monitoring" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                                <h3 className="flow-col-title" style={{ marginBottom: 0 }}>MONITORING</h3>
+                            </div>
                             
                             <div className="flow-node">
                                 <div className="minimal-icon-box">
@@ -158,7 +167,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
 
                         {/* Column 4: SETTLEMENT */}
                         <div className="flow-column">
-                            <h3 className="flow-col-title">SETTLEMENT</h3>
+                            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem' }}>
+                                <img src="/interface-page-enterprise/icon-settlement-tms-enterprise.png" alt="Settlement" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                                <h3 className="flow-col-title" style={{ marginBottom: 0 }}>SETTLEMENT</h3>
+                            </div>
                             
                             <div className="flow-node">
                                 <div className="minimal-icon-box">
@@ -207,7 +219,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
                     </div>
                     {/* MOBILE BUSINESS FLOW (Visible only on < 992px) */}
                     <div className="mobile-business-flow">
-                        <h3 className="flow-col-title">ORDER PLANNING</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.5rem' }}>
+                            <img src="/interface-page-enterprise/icon-orderplanning-tms-enterprise.png" alt="Order Planning" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                            <h3 className="flow-col-title" style={{ marginBottom: 0 }}>ORDER PLANNING</h3>
+                        </div>
                         
                         <div className="flow-node">
                             <div className="minimal-icon-box">
@@ -242,7 +257,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
 
                         <div className="flow-arrow-down"></div>
 
-                        <h3 className="flow-col-title" style={{ marginTop: '1.5rem' }}>JOB ASSIGNMENT</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+                            <img src="/interface-page-enterprise/icon-job-assignment-tms-enterprise.png" alt="Job Assignment" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                            <h3 className="flow-col-title" style={{ marginBottom: 0 }}>JOB ASSIGNMENT</h3>
+                        </div>
 
                         <div className="flow-node">
                             <div className="minimal-icon-box">
@@ -280,7 +298,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
 
                         <div className="flow-arrow-down"></div>
 
-                        <h3 className="flow-col-title" style={{ marginTop: '1.5rem' }}>MONITORING</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+                            <img src="/interface-page-enterprise/icon-monitoring-tms-enterprise.png" alt="Monitoring" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                            <h3 className="flow-col-title" style={{ marginBottom: 0 }}>MONITORING</h3>
+                        </div>
 
                         <div className="flow-node">
                             <div className="minimal-icon-box">
@@ -318,7 +339,10 @@ export default function TmsEnterpriseBusinessFlowSection() {
 
                         <div className="flow-arrow-down"></div>
 
-                        <h3 className="flow-col-title" style={{ marginTop: '1.5rem' }}>SETTLEMENT</h3>
+                        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+                            <img src="/interface-page-enterprise/icon-settlement-tms-enterprise.png" alt="Settlement" style={{ width: '100%', height: 'auto', objectFit: 'contain', marginBottom: '1.5rem', maxWidth: '240px' }} />
+                            <h3 className="flow-col-title" style={{ marginBottom: 0 }}>SETTLEMENT</h3>
+                        </div>
 
                         <div className="flow-node">
                             <div className="minimal-icon-box">

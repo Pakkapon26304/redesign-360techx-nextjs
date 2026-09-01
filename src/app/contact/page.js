@@ -4,6 +4,7 @@ import ContactInfoFormSection from './components/ContactInfoFormSection';
 import ContactTestimonialSection from './components/ContactTestimonialSection';
 import ContactFaqSection from './components/ContactFaqSection';
 import ContactMapSection from './components/ContactMapSection';
+import TmsEnterpriseCustomerLogosSection from '../360techx-enterprise/components/TmsEnterpriseCustomerLogosSection';
 
 export const metadata = {
   title: 'ติดต่อเรา - 360TECHX',
@@ -18,6 +19,9 @@ export default function ContactPage() {
     <main>
       <ContactHeroSection />
       <ContactInfoFormSection />
+      <div style={{ marginTop: '-5rem' }}>
+        <TmsEnterpriseCustomerLogosSection />
+      </div>
       {/* <ContactTestimonialSection /> */}
       {/* <ContactFaqSection /> */}
       <ContactMapSection />

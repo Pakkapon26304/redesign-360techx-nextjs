@@ -1017,34 +1017,34 @@ a {
     margin-left: -3px; 
 }
 
-/* Snake 1: Col 1 to Col 2 (Y=255 to Y=65) */
-.snake-1 .line-h-bottom { top: 255px; left: 0; width: 50%; }
-.snake-1 .line-v { top: 65px; left: 50%; height: 192px; margin-left: 0; }
-.snake-1 .line-h-top { top: 65px; left: 50%; width: 50%; }
+/* Snake 1: Col 1 to Col 2 (Y=511 to Y=321) */
+.snake-1 .line-h-bottom { top: 511px; left: 0; width: 50%; }
+.snake-1 .line-v { top: 321px; left: 50%; height: 192px; margin-left: 0; }
+.snake-1 .line-h-top { top: 321px; left: 50%; width: 50%; }
 .snake-1 .snake-dot { animation: snake1-dot 4s infinite linear; }
 
 @keyframes snake1-dot {
-   0% { top: 255px; left: 0; opacity: 0; }
+   0% { top: 511px; left: 0; opacity: 0; }
    5% { opacity: 1; }
-   9.4% { top: 255px; left: 50%; }
-   91.4% { top: 65px; left: 50%; }
+   9.4% { top: 511px; left: 50%; }
+   91.4% { top: 321px; left: 50%; }
    95% { opacity: 1; }
-   100% { top: 65px; left: 100%; opacity: 0; }
+   100% { top: 321px; left: 100%; opacity: 0; }
 }
 
-/* Snake 2: Col 2 to Col 3 (and Col 3 to 4) (Y=445 to Y=65) */
-.snake-2 .line-h-bottom { top: 445px; left: 0; width: 50%; }
-.snake-2 .line-v { top: 65px; left: 50%; height: 382px; margin-left: 0; }
-.snake-2 .line-h-top { top: 65px; left: 50%; width: 50%; }
+/* Snake 2: Col 2 to Col 3 (and Col 3 to 4) (Y=701 to Y=321) */
+.snake-2 .line-h-bottom { top: 701px; left: 0; width: 50%; }
+.snake-2 .line-v { top: 321px; left: 50%; height: 382px; margin-left: 0; }
+.snake-2 .line-h-top { top: 321px; left: 50%; width: 50%; }
 .snake-2 .snake-dot { animation: snake2-dot 7s infinite linear; }
 
 @keyframes snake2-dot {
-   0% { top: 445px; left: 0; opacity: 0; }
+   0% { top: 701px; left: 0; opacity: 0; }
    2% { opacity: 1; }
-   5.2% { top: 445px; left: 50%; }
-   95.2% { top: 65px; left: 50%; }
+   5.2% { top: 701px; left: 50%; }
+   95.2% { top: 321px; left: 50%; }
    98% { opacity: 1; }
-   100% { top: 65px; left: 100%; opacity: 0; }
+   100% { top: 321px; left: 100%; opacity: 0; }
 }
 
 @media (max-width: 992px) {
@@ -3044,31 +3044,31 @@ html, body {
 }
 
 /* User requested: Center snake lines exactly on the middle of the cards */
-/* Shifting all Y-positions down by 54px to hit the 70px center mark of the 140px card */
-.snake-1 .line-h-bottom { top: 364px !important; }
-.snake-1 .line-v { top: 164px !important; height: 200px !important; }
-.snake-1 .line-h-top { top: 164px !important; }
+/* Shifting all Y-positions down by 256px to account for the new full-width images */
+.snake-1 .line-h-bottom { top: 620px !important; }
+.snake-1 .line-v { top: 420px !important; height: 200px !important; }
+.snake-1 .line-h-top { top: 420px !important; }
 
-.snake-2 .line-h-bottom { top: 564px !important; }
-.snake-2 .line-v { top: 164px !important; height: 400px !important; }
-.snake-2 .line-h-top { top: 164px !important; }
+.snake-2 .line-h-bottom { top: 820px !important; }
+.snake-2 .line-v { top: 420px !important; height: 400px !important; }
+.snake-2 .line-h-top { top: 420px !important; }
 
 @keyframes snake1-dot {
-   0% { top: 364px; left: 0; opacity: 0; }
+   0% { top: 620px; left: 0; opacity: 0; }
    5% { opacity: 1; }
-   9.4% { top: 364px; left: 50%; }
-   91.4% { top: 164px; left: 50%; }
+   9.4% { top: 620px; left: 50%; }
+   91.4% { top: 420px; left: 50%; }
    95% { opacity: 1; }
-   100% { top: 164px; left: 100%; opacity: 0; }
+   100% { top: 420px; left: 100%; opacity: 0; }
 }
 
 @keyframes snake2-dot {
-   0% { top: 564px; left: 0; opacity: 0; }
+   0% { top: 820px; left: 0; opacity: 0; }
    2% { opacity: 1; }
-   5.2% { top: 564px; left: 50%; }
-   95.2% { top: 164px; left: 50%; }
+   5.2% { top: 820px; left: 50%; }
+   95.2% { top: 420px; left: 50%; }
    98% { opacity: 1; }
-   100% { top: 164px; left: 100%; opacity: 0; }
+   100% { top: 420px; left: 100%; opacity: 0; }
 }
 
 
