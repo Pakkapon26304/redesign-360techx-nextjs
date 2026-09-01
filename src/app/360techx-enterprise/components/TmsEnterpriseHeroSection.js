@@ -19,7 +19,7 @@ export default function TmsEnterpriseHeroSection() {
                 <img src="/Logo-interface/360techx-enterprise-black.png" alt="360TechX Enterprise" className="light-logo" style={{ height: '60px', marginBottom: '1rem' }} />
                 
                 {/* Title */}
-                <h2 className="ent-hero-title">ระบบ TMS วางแผนและจัดการระบบขนส่ง <span className="text-gradient">สำหรับองค์กรขนาดใหญ่</span></h2>
+                <h2 className="ent-hero-title">ระบบ TMS วางแผนจัดการโลจิสติกส์<span className="text-gradient"> สำหรับองค์กรขนาดใหญ่</span></h2>
                 
                 {/* Summarized Detail */}
                 <p className="hero-sub ent-hero-sub">
