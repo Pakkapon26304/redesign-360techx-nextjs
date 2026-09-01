@@ -1321,7 +1321,7 @@ a {
     text-transform: uppercase;
 }
 .logo-slider {
-    height: 80px;
+    height: 120px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
@@ -1340,7 +1340,7 @@ a {
     animation-play-state: paused;
 }
 .slide {
-    height: 80px;
+    height: 120px;
     width: 200px;
     display: flex;
     align-items: center;

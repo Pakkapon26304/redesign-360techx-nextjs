@@ -5,7 +5,7 @@ import HomeCoreFeaturesSection from './components/HomeCoreFeaturesSection';
 import HomeTmsTiersSection from './components/HomeTmsTiersSection';
 import HomeTimelineSection from './components/HomeTimelineSection';
 import HomePricingSection from './components/HomePricingSection';
-import HomeCustomerLogosSection from './components/HomeCustomerLogosSection';
+import TmsEnterpriseCustomerLogosSection from '../360techx-enterprise/components/TmsEnterpriseCustomerLogosSection';
 
 // SEO & GEO Optimization
 export const metadata = {
@@ -90,7 +90,7 @@ export default function HomePage() {
       <HomeTmsTiersSection />
       {/* <HomeTimelineSection /> */}
       <HomePricingSection />
-      <HomeCustomerLogosSection />
+      <TmsEnterpriseCustomerLogosSection />
 
     </main>
   );

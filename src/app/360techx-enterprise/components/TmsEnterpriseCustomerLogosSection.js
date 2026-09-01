@@ -3,13 +3,13 @@ import React from 'react';
 
 export default function TmsEnterpriseCustomerLogosSection() {
   const logos = [
-    '/logo-customer-enterprise/15214.png',
-    '/logo-customer-enterprise/Logistics-Asia-logo-2021.jpg',
-    '/logo-customer-enterprise/PTG_Energy_Logo.svg.webp',
-    '/logo-customer-enterprise/TRR-LIN-INB-TH-Expand.png',
-    '/logo-customer-enterprise/images.png',
-    '/logo-customer-enterprise/logo.webp',
-    '/logo-customer-enterprise/logo_o.png'
+    '/logo-customer-enterprise/logo-customer-enterprise-1.png',
+    '/logo-customer-enterprise/logo-customer-enterprise-2.png',
+    '/logo-customer-enterprise/logo-customer-enterprise-3.png',
+    '/logo-customer-enterprise/logo-customer-enterprise-4.png',
+    '/logo-customer-enterprise/logo-customer-enterprise-5.png',
+    '/logo-customer-enterprise/logo-customer-enterprise-6.png',
+    '/logo-customer-enterprise/logo-customer-enterprise-7.png'
   ];
 
   return (
@@ -30,10 +30,11 @@ export default function TmsEnterpriseCustomerLogosSection() {
                             src={logo} 
                             alt={`Customer Logo ${index + 1}`} 
                             style={{ 
-                                height: '60px', 
+                                height: '100px', 
                                 width: 'auto', 
-                                maxWidth: '180px',
-                                objectFit: 'contain'
+                                maxWidth: '250px',
+                                objectFit: 'contain',
+                                borderRadius: '16px'
                             }} 
                         />
                     </div>
@@ -45,10 +46,11 @@ export default function TmsEnterpriseCustomerLogosSection() {
                             src={logo} 
                             alt={`Customer Logo ${index + 1}`} 
                             style={{ 
-                                height: '60px', 
+                                height: '100px', 
                                 width: 'auto', 
-                                maxWidth: '180px',
-                                objectFit: 'contain'
+                                maxWidth: '250px',
+                                objectFit: 'contain',
+                                borderRadius: '16px'
                             }} 
                         />
                     </div>

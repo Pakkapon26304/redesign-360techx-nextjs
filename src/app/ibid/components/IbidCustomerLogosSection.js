@@ -2,21 +2,24 @@ import React from 'react';
 
 export default function IbidCustomerLogosSection() {
   const logos = [
-    '/Logo-customer-ibid/clients-logo-1.png',
-    '/Logo-customer-ibid/clients-logo-2.png',
-    '/Logo-customer-ibid/clients-logo-3.png',
-    '/Logo-customer-ibid/clients-logo-4.png',
-    '/Logo-customer-ibid/clients-logo-5.png',
-    '/Logo-customer-ibid/clients-logo-6.png',
-    '/Logo-customer-ibid/clients-logo-7.png'
+    '/Logo-customer-ibid/logo-customer-ibid-1.png',
+    '/Logo-customer-ibid/logo-customer-ibid-2.png',
+    '/Logo-customer-ibid/logo-customer-ibid-3.png',
+    '/Logo-customer-ibid/logo-customer-ibid-4.png',
+    '/Logo-customer-ibid/logo-customer-ibid-5.png',
+    '/Logo-customer-ibid/logo-customer-ibid-6_1.png',
+    '/Logo-customer-ibid/logo-customer-ibid-6.png',
+    '/Logo-customer-ibid/logo-customer-ibid-7.png'
   ];
 
   return (
     <>
       {/* Customer Logos Section */}
-      <section className="customer-logos-section">
-          <div className="section-header text-center" style={{ marginBottom: '2rem' }}>
-              <p>ได้รับความไว้วางใจจากบริษัทชั้นนำ</p>
+      <section className="customer-logos-section" style={{ paddingBottom: '4rem' }}>
+          <div className="section-header text-center" style={{ marginBottom: '1rem' }}>
+              <p style={{ color: 'var(--text-muted)', fontSize: '1.1rem', marginBottom: '2rem' }}>
+                  ได้รับความไว้วางใจจากบริษัทชั้นนำ
+              </p>
           </div>
           <div className="logo-slider">
               <div className="logo-slide-track">
@@ -27,10 +30,11 @@ export default function IbidCustomerLogosSection() {
                             src={logo} 
                             alt={`Customer Logo ${index + 1}`} 
                             style={{ 
-                                height: '60px', 
+                                height: '100px', 
                                 width: 'auto', 
-                                maxWidth: '180px',
-                                objectFit: 'contain'
+                                maxWidth: '250px',
+                                objectFit: 'contain',
+                                borderRadius: '16px'
                             }} 
                         />
                     </div>
@@ -42,10 +46,11 @@ export default function IbidCustomerLogosSection() {
                             src={logo} 
                             alt={`Customer Logo ${index + 1}`} 
                             style={{ 
-                                height: '60px', 
+                                height: '100px', 
                                 width: 'auto', 
-                                maxWidth: '180px',
-                                objectFit: 'contain'
+                                maxWidth: '250px',
+                                objectFit: 'contain',
+                                borderRadius: '16px'
                             }} 
                         />
                     </div>
