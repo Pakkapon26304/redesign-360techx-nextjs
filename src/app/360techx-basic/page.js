@@ -183,7 +183,7 @@ export default function BasicPage() {
                   </p>
                   
                   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                      <a href="#" className="btn btn-primary hover-lift" style={{ padding: '1rem 3rem', fontSize: '1.1rem', borderRadius: '50px' }}>เริ่มต้นใช้งานฟรี</a>
+                      <a href="/contact" className="btn btn-primary hover-lift" style={{ padding: '1rem 3rem', fontSize: '1.1rem', borderRadius: '50px' }}>เริ่มต้นใช้งานฟรี</a>
                   </div>
               </div>
           </div>
@@ -346,7 +346,7 @@ export default function BasicPage() {
               <p style={{ fontSize: '1.2rem', marginBottom: '3rem', maxWidth: '600px', margin: '0 auto 3rem auto', color: 'white' }}>
                   สมัครใช้งาน 360TECHX Basic วันนี้ ฟรี! ไม่มีค่าใช้จ่ายแอบแฝง
               </p>
-              <a href="#" className="btn hover-lift" style={{ background: 'linear-gradient(135deg, var(--primary), var(--secondary))', color: 'white', padding: '1.25rem 3.5rem', fontSize: '1.15rem', borderRadius: '50px', textDecoration: 'none', fontWeight: '700', border: 'none', display: 'inline-block' }}>สมัครใช้งานฟรี</a>
+              <a href="/contact" className="btn hover-lift" style={{ background: 'linear-gradient(135deg, var(--primary), var(--secondary))', color: 'white', padding: '1.25rem 3.5rem', fontSize: '1.15rem', borderRadius: '50px', textDecoration: 'none', fontWeight: '700', border: 'none', display: 'inline-block' }}>สมัครใช้งานฟรี</a>
           </div>
       </section>
     </main>

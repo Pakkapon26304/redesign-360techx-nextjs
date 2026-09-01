@@ -28,7 +28,7 @@ export default function HomePricingSectionBasic() {
                         <li><span className="check-icon">✓</span> รองรับการจ่ายงาน และติดตามสถานะคนขับด้วย 360TRUCKER App</li>
                         <li><span className="check-icon">✓</span> จัดการข้อมูลรถ ประวัติคนขับ และคำนวณค่าเที่ยว ได้ในระบบเดียว</li>
                     </ul>
-                    <a href="#" className="btn btn-outline btn-full mt-4">เริ่มต้นใช้งานฟรี</a>
+                    <a href="/contact" className="btn btn-outline btn-full mt-4">เริ่มต้นใช้งานฟรี</a>
                 </div>
 
                 {/* Premium */}
@@ -50,7 +50,7 @@ export default function HomePricingSectionBasic() {
                         <li><span className="check-icon">✓</span> สามารถดาวน์โหลดข้อมูลเป็นไฟล์ Excel ได้</li>
                         <li><span className="check-icon">✓</span> เชื่อมต่อระบบบริหาร และจัดการค่าน้ำมันได้</li>
                     </ul>
-                    <a href="#" className="btn btn-primary btn-full mt-4">ติดต่อฝ่ายขาย</a>
+                    <a href="/contact" className="btn btn-primary btn-full mt-4">ติดต่อฝ่ายขาย</a>
                 </div>
 
                 {/* Enterprise */}
@@ -75,7 +75,7 @@ export default function HomePricingSectionBasic() {
                         <li><span className="check-icon">✓</span> รองรับการเชื่อมต่อระบบ ERP และระบบ Warehouse Management System ที่มีอยู่</li>
                         <li><span className="check-icon">✓</span> รองรับการปรับแต่งระบบให้เหมาะสมกับธุรกิจ (Customization)</li>
                     </ul>
-                    <a href="#" className="btn btn-outline btn-full mt-4">ติดต่อฝ่ายขาย</a>
+                    <a href="/contact" className="btn btn-outline btn-full mt-4">ติดต่อฝ่ายขาย</a>
                 </div>
             </div>
         </div>

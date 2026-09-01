@@ -65,8 +65,8 @@ export default function Navbar() {
                     <Link href="/contact" className={pathname === '/contact' ? 'active' : ''}>ติดต่อเรา</Link>
                     
                     <div className="mobile-nav-actions">
-                        <Link href="#" className="btn btn-outline" style={{ width: '100%', textAlign: 'center' }}>เข้าสู่ระบบ</Link>
-                        <Link href="#" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>สมัครใช้งานฟรี</Link>
+                        <Link href="https://tms.360techx.co" target="_blank" className="btn btn-outline" style={{ width: '100%', textAlign: 'center' }}>เข้าสู่ระบบ</Link>
+                        <Link href="/contact" className="btn btn-primary" style={{ width: '100%', textAlign: 'center' }}>สมัครใช้งานฟรี</Link>
                     </div>
                 </div>
                 <div className="nav-actions-container" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
@@ -75,8 +75,8 @@ export default function Navbar() {
                         <svg className="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                     </button>
                     <div className="desktop-nav-actions" style={{ display: 'flex', gap: '1rem' }}>
-                        <Link href="#" className="btn btn-outline hide-on-mobile">เข้าสู่ระบบ</Link>
-                        <Link href="#" className="btn btn-primary topbar-signup">สมัครใช้งานฟรี</Link>
+                        <Link href="https://tms.360techx.co" target="_blank" className="btn btn-outline hide-on-mobile">เข้าสู่ระบบ</Link>
+                        <Link href="/contact" className="btn btn-primary topbar-signup">สมัครใช้งานฟรี</Link>
                     </div>
                 </div>
                 <div className="menu-toggle" onClick={toggleMobileMenu}>
