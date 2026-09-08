@@ -3,9 +3,21 @@ import Link from 'next/link';
 import LoadMoreButton from '@/components/LoadMoreButton';
 
 export default async function Page() {
-  // ดึงข้อมูลบทความทั้งหมดจาก WordPress API
-  const res = await fetch('https://www.360techx.co/wp-json/wp/v2/posts?_embed&per_page=9', { next: { revalidate: 60 } });
-  const posts = await res.json();
+  // ดึงข้อมูลบทความทั้งหมดจาก WordPress API พร้อมจัดการ Error
+  let posts = [];
+  try {
+    const res = await fetch('https://www.360techx.co/wp-json/wp/v2/posts?_embed&per_page=9', { 
+      next: { revalidate: 60 },
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' } // ป้องกันบอทบล็อก
+    });
+    if (res.ok) {
+      posts = await res.json();
+    } else {
+      console.error('WP API Error:', res.status);
+    }
+  } catch (error) {
+    console.error('Fetch failed:', error);
+  }
 
   return (
     <>

@@ -6,10 +6,20 @@ import RelatedPosts from '../components/RelatedPosts';
 export async function generateMetadata({ params }) {
   const { slug } = await params;
   
-  // ดึงข้อมูลจาก WordPress API ของจริง
-  const res = await fetch(`https://www.360techx.co/wp-json/wp/v2/posts?slug=${slug}&_embed`, { cache: 'no-store' });
-  const posts = await res.json();
-  const post = posts[0];
+  // ดึงข้อมูลจาก WordPress API ของจริง พร้อมจัดการ Error
+  let post = null;
+  try {
+    const res = await fetch(`https://www.360techx.co/wp-json/wp/v2/posts?slug=${slug}&_embed`, { 
+      cache: 'no-store',
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+    });
+    if (res.ok) {
+      const posts = await res.json();
+      post = posts[0];
+    }
+  } catch (error) {
+    console.error('Fetch failed:', error);
+  }
 
   if (!post) {
     return { title: 'Post Not Found | 360TECHX' };
@@ -49,9 +59,19 @@ export default async function ArticlePage({ params }) {
   const { slug } = await params;
 
   // ดึงข้อมูลบทความจริงๆ จาก WordPress REST API
-  const res = await fetch(`https://www.360techx.co/wp-json/wp/v2/posts?slug=${slug}&_embed`, { cache: 'no-store' });
-  const posts = await res.json();
-  const post = posts[0];
+  let post = null;
+  try {
+    const res = await fetch(`https://www.360techx.co/wp-json/wp/v2/posts?slug=${slug}&_embed`, { 
+      cache: 'no-store',
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+    });
+    if (res.ok) {
+      const posts = await res.json();
+      post = posts[0];
+    }
+  } catch (error) {
+    console.error('Fetch failed:', error);
+  }
   
   console.log("Fetching slug:", slug, "Found post:", !!post);
 
