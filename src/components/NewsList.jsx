@@ -3,11 +3,35 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-export default function NewsList({ initialPosts }) {
+export default function NewsList({ initialPosts, categories }) {
   const [posts, setPosts] = useState(initialPosts || []);
   const [page, setPage] = useState(1);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [hasMore, setHasMore] = useState((initialPosts || []).length === 9);
+
+  // เมื่อกดเปลี่ยนหมวดหมู่
+  const handleCategoryChange = async (categoryId) => {
+    setActiveCategory(categoryId);
+    setPage(1);
+    setIsLoading(true);
+    setPosts([]);
+    
+    try {
+      const catParam = categoryId !== null ? `&categories=${categoryId}` : '';
+      
+      const res = await fetch(`https://www.360techx.co/wp-json/wp/v2/posts?_embed&per_page=9${catParam}`);
+      if (res.ok) {
+        const newPosts = await res.json();
+        setPosts(newPosts);
+        setHasMore(newPosts.length === 9);
+      }
+    } catch (error) {
+      console.error('Failed to load category posts:', error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   const handleLoadMore = async () => {
     if (isLoading || !hasMore) return;
@@ -15,7 +39,11 @@ export default function NewsList({ initialPosts }) {
     
     try {
       const nextPage = page + 1;
-      const res = await fetch(`https://www.360techx.co/wp-json/wp/v2/posts?_embed&per_page=9&page=${nextPage}`);
+      const catParam = activeCategory !== null ? `&categories=${activeCategory}` : '';
+      
+      const apiUrl = `https://www.360techx.co/wp-json/wp/v2/posts?_embed&per_page=9&page=${nextPage}${catParam}`;
+
+      const res = await fetch(apiUrl);
       
       if (res.ok) {
         const newPosts = await res.json();
@@ -40,6 +68,27 @@ export default function NewsList({ initialPosts }) {
 
   return (
     <>
+      <div className="filter-tabs">
+        <button 
+          className={`filter-btn ${activeCategory === null ? 'active' : ''}`}
+          onClick={() => handleCategoryChange(null)}
+        >
+          ทั้งหมด
+        </button>
+        {categories && categories.map(cat => {
+          if (cat.name === 'Uncategorized') return null; // ซ่อน Uncategorized
+          return (
+            <button 
+              key={cat.id}
+              className={`filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
+              onClick={() => handleCategoryChange(cat.id)}
+            >
+              {cat.name}
+            </button>
+          );
+        })}
+      </div>
+
       <div className="news-grid">
         {posts && posts.map((post) => {
           const dateObj = new Date(post.date);
@@ -74,7 +123,11 @@ export default function NewsList({ initialPosts }) {
         })}
       </div>
 
-      {hasMore && (
+      {isLoading && posts.length === 0 && (
+        <div style={{ textAlign: 'center', padding: '3rem' }}>กำลังโหลด...</div>
+      )}
+
+      {hasMore && posts.length > 0 && (
         <div className="load-more-container" style={{ display: 'flex', justifyContent: 'center', marginTop: '3rem', marginBottom: '2rem' }}>
           <button 
             className="btn btn-outline" 
