@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import ContactInfoFormSection from '../../contact/components/ContactInfoFormSection';
+import ArticleTracker from '../components/ArticleTracker';
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -123,6 +124,13 @@ export default async function ArticlePage({ params }) {
   return (
     <main style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
       
+      {/* 🟢 GTM Tracker: ส่งข้อมูลหมวดหมู่และชื่อเรื่องให้ GTM */}
+      <ArticleTracker 
+        title={post.title.rendered} 
+        category={categoryName} 
+        author={authorName} 
+      />
+
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '10rem 2rem 6rem 2rem', display: 'flex', gap: '3rem', flexWrap: 'wrap' }}>
         
         {/* ================= LEFT CONTENT COLUMN ================= */}
