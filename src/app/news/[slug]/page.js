@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
 import ContactInfoFormSection from '../../contact/components/ContactInfoFormSection';
-import RelatedPosts from '../components/RelatedPosts';
 
 export async function generateMetadata({ params }) {
   const { slug } = await params;
@@ -88,18 +87,38 @@ export default async function ArticlePage({ params }) {
   
   // หาหมวดหมู่
   const categoryName = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'News';
+  const categoryId = post.categories?.[0] || '';
 
   // หาข้อมูลผู้เขียน
   const authorName = post._embedded?.author?.[0]?.name || '360TECHX Team';
   const authorAvatar = post._embedded?.author?.[0]?.avatar_urls?.['96'] || '/Authors/Pakkapon-Chuensuwan.JPG';
 
-  // ส่งข้อมูลจำลองไปให้ RelatedPosts ชั่วคราวก่อน หรือถ้าอยากดึงจริงก็ทำได้
+  // ดึงบทความที่เกี่ยวข้อง (Related Posts) จากหมวดหมู่เดียวกัน 5 บทความ (ไม่รวมบทความนี้)
+  let relatedPosts = [];
+  try {
+    const relatedRes = await fetch(`https://www.360techx.co/wp-json/wp/v2/posts?_embed&per_page=5&categories=${categoryId}&exclude=${post.id}`, { 
+      next: { revalidate: 60 },
+      headers: { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)' }
+    });
+    if (relatedRes.ok) {
+      relatedPosts = await relatedRes.json();
+    }
+  } catch (error) {
+    console.error('Failed to fetch related posts', error);
+  }
+
+  // ส่งข้อมูล Tags ไปให้ (ดึงมาจาก wp:term index 1 คือ Tags)
+  const postTags = post._embedded?.['wp:term']?.[1] || [];
+  const tagNames = postTags.map(tag => tag.name);
+  
   const postDataForRelated = {
-    title: post.title.rendered,
-    category: categoryName,
-    featuredImage: featuredMedia || '/Logo-interface/CONVERGENT_PROCESSES.jpeg',
-    tags: []
+    tags: tagNames
   };
+
+  // เตรียม URL สำหรับแชร์
+  const currentUrl = `https://www.360techx.co/news/${slug}`;
+  const encodedUrl = encodeURIComponent(currentUrl);
+  const encodedTitle = encodeURIComponent(post.title.rendered);
 
   return (
     <main style={{ background: 'var(--bg-main)', minHeight: '100vh' }}>
@@ -121,10 +140,15 @@ export default async function ArticlePage({ params }) {
                     <span style={{ fontSize: '0.85rem' }}>สร้างเมื่อวันที่ : {formattedDate}</span>
                   </div>
                 </div>
+                
+                {/* Social Share */}
                 <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginLeft: 'auto' }}>
-                  <button style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#1877F2', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem' }}>f</button>
-                  <button style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#000000', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem' }}>X</button>
-                  <button style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#0A66C2', color: '#fff', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem' }}>in</button>
+                  <span style={{ fontSize: '0.85rem', fontWeight: '600' }}>แชร์บทความ:</span>
+                  <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`} target="_blank" rel="noopener noreferrer" style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#1877F2', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontWeight: 'bold' }}>f</a>
+                  <a href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`} target="_blank" rel="noopener noreferrer" style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#000000', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontWeight: 'bold' }}>X</a>
+                  <a href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}&title=${encodedTitle}`} target="_blank" rel="noopener noreferrer" style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#0A66C2', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontWeight: 'bold' }}>in</a>
+                  <a href={`https://social-plugins.line.me/lineit/share?url=${encodedUrl}`} target="_blank" rel="noopener noreferrer" style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#00B900', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontWeight: 'bold' }}>L</a>
+                  <a href={`mailto:?subject=${encodedTitle}&body=ลองอ่านบทความนี้ดูสิ:%20${encodedUrl}`} style={{ width: '32px', height: '32px', borderRadius: '50%', background: '#888', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', fontWeight: 'bold' }}>✉</a>
                 </div>
               </div>
           </div>
@@ -142,10 +166,41 @@ export default async function ArticlePage({ params }) {
             dangerouslySetInnerHTML={{ __html: post.content.rendered }}
           />
 
+          {/* Tags */}
+          {tagNames.length > 0 && (
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap', marginTop: '4rem', paddingTop: '2rem', borderTop: '1px solid var(--border-color)' }}>
+              <span style={{ fontWeight: 'bold', color: 'var(--text-main)' }}>Tags:</span>
+              {tagNames.map(tag => (
+                <span key={tag} style={{ background: 'rgba(255,255,255,0.05)', padding: '6px 14px', borderRadius: '8px', fontSize: '0.9rem', color: 'var(--text-muted)' }}>#{tag}</span>
+              ))}
+            </div>
+          )}
+
         </article>
 
         <aside style={{ flex: '1 1 30%', minWidth: '300px', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
           
+          {/* Related Posts in Sidebar */}
+          {relatedPosts && relatedPosts.length > 0 && (
+            <div style={{ background: '#ffffff', borderRadius: '16px', padding: '1.5rem', border: '1px solid var(--border-color)' }}>
+              <h3 style={{ color: 'var(--text-main)', fontSize: '1.25rem', marginBottom: '1.5rem', borderLeft: '4px solid var(--primary)', paddingLeft: '0.75rem' }}>บทความที่เกี่ยวข้อง</h3>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {relatedPosts.map((relatedPost) => {
+                  const featuredMedia = relatedPost._embedded?.['wp:featuredmedia']?.[0]?.source_url || '/Logo-interface/CONVERGENT_PROCESSES.jpeg';
+
+                  return (
+                    <Link href={`/news/${relatedPost.slug}`} key={relatedPost.id} style={{ display: 'flex', gap: '1rem', textDecoration: 'none', color: 'inherit' }}>
+                      <img src={featuredMedia} alt={relatedPost.title?.rendered} style={{ width: '80px', height: '80px', objectFit: 'cover', borderRadius: '8px', flexShrink: 0 }} />
+                      <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                        <h4 style={{ fontSize: '0.95rem', fontWeight: '600', marginBottom: '0', lineHeight: 1.3, color: 'var(--text-main)' }} dangerouslySetInnerHTML={{ __html: relatedPost.title?.rendered || '' }}></h4>
+                      </div>
+                    </Link>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
           {/* Custom Contact Card */}
           <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid var(--border-color)', display: 'flex', flexDirection: 'column', background: '#ffffff' }}>
             {/* Banner Image */}
@@ -159,8 +214,6 @@ export default async function ArticlePage({ params }) {
 
         </aside>
       </div>
-      {/* 4. Tags and Related Posts Full Width Section */}
-      <RelatedPosts post={postDataForRelated} />
 
       {/* สไตล์สำหรับจัดการ HTML ที่ได้มาจาก WordPress (wp-content) */}
       <style dangerouslySetInnerHTML={{__html: `
