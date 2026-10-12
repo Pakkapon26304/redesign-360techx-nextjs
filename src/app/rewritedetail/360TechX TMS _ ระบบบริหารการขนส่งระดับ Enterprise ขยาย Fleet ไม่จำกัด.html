@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>360TechX TMS | ระบบบริหารการขนส่งระดับ Enterprise ขยาย Fleet ไม่จำกัด</title>
+<meta name="description" content="TMS สำหรับโรงงาน DC และ 3PL วางแผนเส้นทางด้วย AI รวม GPS 20+ แบรนด์ เชื่อมต่อ ERP/WMS ไม่จำกัดรถและคนขับ เรียกรถเสริม 100,000+ คันผ่าน 360TRUCK">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--card:#fff;--ink:#14213d;--mut:#55627a;--line:#dde2ea;--brand:#1f5eff;--on:#fff;--amb:#b45f06;--hero:#14213d;--heroink:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1626;--card:#16223a;--ink:#eef2f8;--mut:#a3b0c7;--line:#26344f;--brand:#6c93ff;--on:#0e1626;--amb:#f5b04c;--hero:#0a111f;--heroink:#fff}}
+:root[data-theme="dark"]{--bg:#0e1626;--card:#16223a;--ink:#eef2f8;--mut:#a3b0c7;--line:#26344f;--brand:#6c93ff;--on:#0e1626;--amb:#f5b04c;--hero:#0a111f;--heroink:#fff}
+*{box-sizing:border-box}
+:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:calc(120px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "Noto Sans Thai",system-ui,sans-serif}
+a{color:inherit}
+.w{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.3;margin:0}
+h2{font-size:clamp(26px,4vw,38px);font-weight:800;max-width:22ch}
+.lead{color:var(--mut);max-width:62ch;margin:12px 0 0}
+section{padding:72px 0}
+.btn{display:inline-block;padding:13px 22px;border-radius:8px;font-weight:700;text-decoration:none;border:2px solid var(--brand);background:var(--brand);color:var(--on);cursor:pointer;font-family:inherit;font-size:16px}
+.btn.o{background:transparent;color:inherit;border-color:currentColor}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid var(--amb);outline-offset:2px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--bg);border-bottom:1px solid var(--line)}
+header .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+header nav{display:flex;gap:22px;align-items:center;font-size:15px}
+header nav a{text-decoration:none;color:var(--mut)}
+.logo{font-weight:800;font-size:20px;text-decoration:none}
+.logo b{color:var(--brand)}
+@media(max-width:760px){header nav a.h{display:none}}
+.hero{background:var(--hero);color:var(--heroink);padding:64px 0 72px}
+.hero .w{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .w{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(30px,5vw,50px);font-weight:800}
+.hero p{color:#c4cee2;max-width:56ch}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.hero .btn{background:#fff;color:#14213d;border-color:#fff}
+.hero .btn.o{background:transparent;color:#fff}
+.strip{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:26px;font-size:14px;color:#9fb0cf}
+.map{background:#0d1a30;border:1px solid #2b3d60;border-radius:14px;padding:16px;font-size:14px;color:#dbe5f7}
+.map .grid{height:150px;border-radius:8px;background:#122443;position:relative;overflow:hidden}
+.map svg{width:100%;height:100%}
+.row{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid #263a5e}
+.row:last-child{border:0}
+.tag{font-size:12px;padding:2px 9px;border-radius:99px;background:#1f5eff33;color:#a9c0ff;white-space:nowrap}
+.tag.g{background:#2fbf7122;color:#7fe0ae}
+.tag.a{background:#f5a52433;color:#ffd08a}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:36px}
+@media(max-width:900px){.g3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.g3{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{margin:0;color:var(--mut);font-size:15px}
+.card .imp{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink);font-weight:500;font-size:15px}
+.g2{grid-template-columns:repeat(2,1fr);max-width:760px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.g4{grid-template-columns:repeat(4,1fr)}@media(max-width:900px){.g4{grid-template-columns:1fr 1fr}}@media(max-width:600px){.g4{grid-template-columns:1fr}}
+.shot{border:2px dashed var(--line);border-radius:10px;min-height:170px;display:grid;place-items:center;color:var(--mut);text-align:center;padding:16px;font-size:14px}
+.tool{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}@media(max-width:800px){.tool{grid-template-columns:1fr}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px}
+.fm{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.big{font-size:clamp(26px,4.5vw,38px);font-weight:800;color:var(--amb);line-height:1.2;display:block}
+.q{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.q span{flex:1}.q label{display:inline-flex;gap:4px;align-items:center;white-space:nowrap}.q input{width:auto}
+.fl{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0}.fl i{width:34px;height:20px;border-radius:4px;background:var(--brand);transition:opacity .5s}.fl i.off{opacity:.12}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:32px}
+.tabs button{padding:10px 18px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:500 15px "Noto Sans Thai",sans-serif;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--brand);color:var(--on);border-color:var(--brand)}
+.panel{margin-top:18px;display:grid;grid-template-columns:1fr 1.4fr;gap:24px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px}
+@media(max-width:760px){.panel{grid-template-columns:1fr}}
+.panel ul{margin:0;padding-left:20px}
+.panel li{margin-bottom:8px}
+.panel h3{font-size:16px;margin-bottom:8px}
+.truck{background:var(--hero);color:var(--heroink)}
+.truck .lead{color:#c4cee2}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;counter-reset:s}
+@media(max-width:760px){.steps{grid-template-columns:1fr}}
+.steps div{border-left:3px solid var(--amb);padding:4px 0 4px 16px;counter-increment:s}
+.steps div:before{content:"ขั้นที่ " counter(s);display:block;font-size:13px;color:#ffd08a}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+@media(max-width:700px){.stats{grid-template-columns:1fr}}
+.stat{border-top:4px solid var(--amb);padding-top:12px}
+.stat b{display:block;font-size:clamp(36px,6vw,56px);font-weight:800;line-height:1.1}
+.note{font-size:13px;color:var(--mut);margin-top:18px}
+.price{display:flex;flex-direction:column}
+.price ul{padding-left:18px;margin:12px 0 18px;color:var(--mut);font-size:15px}
+.price .btn{margin-top:auto;text-align:center}
+.price.rec{border:2px solid var(--brand)}
+details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-top:12px}
+summary{cursor:pointer;font-weight:700}
+details p{margin:10px 0 0;color:var(--mut)}
+.demo{background:var(--card);border-top:1px solid var(--line)}
+.demo .w{display:grid;grid-template-columns:1fr 1.1fr;gap:40px}
+@media(max-width:860px){.demo .w{grid-template-columns:1fr}}
+form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){form{grid-template-columns:1fr}}
+label{display:grid;gap:5px;font-size:14px;font-weight:500}
+label.f{grid-column:1/-1}
+input,select{padding:11px 12px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:16px "Noto Sans Thai",sans-serif;width:100%}
+form .btn{grid-column:1/-1}
+#ok{display:none;grid-column:1/-1;padding:14px;border-radius:8px;background:#2fbf7122;font-weight:500}
+footer{padding:36px 0;font-size:14px;color:var(--mut);border-top:1px solid var(--line)}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+.hero .w{grid-template-columns:1fr!important}.hero h1{max-width:24ch}
+.bd{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.bd span{border:1px solid #3a4f7a;border-radius:99px;padding:5px 14px;font-size:14px;color:#dbe5f7}
+.seq{counter-reset:s}.seq .card:before{counter-increment:s;content:"ขั้นที่ " counter(s);display:block;font-size:13px;color:var(--amb);font-weight:700;margin-bottom:4px}
+.dg{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:10px;align-items:center;margin:28px 0;text-align:center}
+.dg div{border:2px solid var(--brand);border-radius:10px;padding:16px 10px;font-weight:700;background:var(--card)}.dg i{font-style:normal;font-size:22px;color:var(--amb)}
+@media(max-width:700px){.dg{grid-template-columns:1fr}.dg i{transform:rotate(90deg)}}
+.ex p{max-width:70ch}
+header .sub{border-top:1px solid var(--line)}header .sub .w{height:auto;display:block}
+header nav.sn{display:flex;gap:6px;overflow-x:auto;padding:8px 0;scrollbar-width:none}header nav.sn[hidden]{display:none}
+header nav.sn a{white-space:nowrap;padding:4px 13px;border-radius:99px;font-size:14px;border:1px solid var(--line)}
+header nav.sn a.on{background:var(--brand);color:var(--on);border-color:var(--brand)}
+.page{display:none}.page.on{display:block}header nav a[aria-current=page]{color:var(--ink);font-weight:700}.fz li{margin-bottom:6px}.fz small{display:block;color:var(--mut)}
+</style>
+</head>
+<body>
+<header><div class="w">
+<a class="logo" href="#/">360<b>TECHX</b></a>
+<nav class="pn"><a href="#/" data-p="h">หน้าแรก</a><a href="#/enterprise" data-p="e">TMS Enterprise</a><a href="#/basic" data-p="b">TMS Basic</a><a class="btn" style="padding:8px 16px;font-size:14px" href="#demo">นัดหมายสาธิตระบบ</a></nav>
+</div><div class="sub"><div class="w"><nav class="sn" id="sn-h" aria-label="ทางลัดในหน้า"><a href="#flow">ระบบทำงานอย่างไร</a><a href="#calc">คำนวณการประหยัด</a><a href="#industry">โซลูชันตามอุตสาหกรรม</a><a href="#score">ประเมินคะแนน</a></nav><nav class="sn" id="sn-e" aria-label="ทางลัดในหน้า" hidden><a href="#vision">ภาพรวม</a><a href="#cloud">Cloud &amp; Integration</a><a href="#bflow">Business Flow</a><a href="#community">Community</a><a href="#roi">ROI</a><a href="#demo">ติดต่อ</a></nav><nav class="sn" id="sn-b" aria-label="ทางลัดในหน้า" hidden><a href="#bfeat">ฟีเจอร์หลัก</a><a href="#brev">หารายได้เพิ่ม</a><a href="#bplans">แพ็กเกจราคา</a><a href="#bstart">เริ่มต้นใช้งาน</a></nav></div></div></header>
+<main>
+<div class="page on" id="pg-h">
+<div class="hero"><div class="w">
+<div>
+<p style="font-weight:700;font-size:20px;color:#fff;margin:0 0 10px">Move More. Plan Smarter. Spend Less.</p>
+<h1>360TechX TMS — ระบบบริหารการขนส่งระดับ Enterprise ปลดล็อกการขยาย Fleet และขับเคลื่อนธุรกิจให้เติบโตอย่างยั่งยืน</h1>
+<p>ยกระดับการวางแผนจัดส่งด้วย AI Engine, บริหารเครือข่าย Sub-contractors, รวมการเชื่อมต่อสัญญาณ GPS Multi-brand กว่า 20+ เจ้า และรองรับการเชื่อมต่อ ERP/WMS แบบไร้รอยต่อ พร้อมโมเดลคุ้มค่าที่สุด ไร้ข้อจำกัด ไม่จำกัดจำนวนรถและคนขับ (Unlimited Truck &amp; Driver)คุ้มค่าที่สุด</p>
+<div class="cta"><a class="btn" href="#calc">Calculate Your Potential Savings</a><a class="btn o" href="#flow">ดูว่า 360 TMS ทำงานอย่างไร</a></div>
+<div class="strip"><span>AI Route Planning</span><span>GPS 20+ แบรนด์</span><span>เชื่อมต่อ ERP/WMS</span><span>Unlimited Truck &amp; Driver</span></div>
+</div>
+<div class="map" role="img" aria-label="ตัวอย่างหน้าจอ Dashboard แผนที่ Real-time">
+<div class="grid"><svg viewBox="0 0 300 150" preserveAspectRatio="none"><path d="M10 120 C60 100 80 40 140 60 S230 110 290 30" fill="none" stroke="#6c93ff" stroke-width="3"/><path d="M20 30 C80 50 120 20 170 90 S250 130 290 110" fill="none" stroke="#f5a524" stroke-width="3" stroke-dasharray="6 5"/><circle cx="140" cy="60" r="6" fill="#7fe0ae"/><circle cx="170" cy="90" r="6" fill="#7fe0ae"/><circle cx="290" cy="30" r="6" fill="#fff"/></svg></div>
+<div class="row"><span>เที่ยว BKK-0142 · 6 จุดส่ง</span><span class="tag g">กำลังวิ่ง</span></div>
+<div class="row"><span>เที่ยว CNX-0987 · รถร่วม</span><span class="tag">e-POD แล้ว</span></div>
+<div class="row"><span>งานส่วนเกิน 12 เที่ยว</span><span class="tag a">เรียกรถ 360TRUCK</span></div>
+</div>
+</div></div>
+
+<section><div class="w">
+<h2>ปัญหาที่ทีมขนส่งเจอทุกวัน</h2>
+<div class="g3 g4">
+<div class="card"><h3>ใช้รถเกินจำเป็น</h3><p>รถวิ่งไม่เต็ม capacity หรือรวมงาน (consolidate) ได้ไม่ดี</p></div>
+<div class="card"><h3>วางแผนนาน</h3><p>Planner ใช้ Excel หรือขั้นตอน manual มากเกินไป</p></div>
+<div class="card"><h3>มองไม่เห็นสถานะ</h3><p>ต้องโทรตามรถหรือถาม transporter เพื่อเช็กสถานะ</p></div>
+<div class="card"><h3>ข้อมูลกระจัดกระจาย</h3><p>Order, planning, booking และ tracking อยู่คนละระบบ</p></div>
+</div></div></section>
+
+<section id="flow" style="background:var(--card);border-block:1px solid var(--line)"><div class="w">
+<h2>จากออเดอร์ถึงการวิเคราะห์ ในระบบเดียวที่เชื่อมต่อกัน</h2>
+<div class="tabs" role="tablist" id="ft" aria-label="ขั้นตอนการทำงาน"></div>
+<div class="panel" id="fp" role="tabpanel" aria-live="polite"></div>
+<h2 style="margin-top:56px">ขายผลลัพธ์ ไม่ใช่รายการฟีเจอร์</h2>
+<div class="g3 g4">
+<div class="card"><h3>Plan Better: ใช้รถทุกคันให้คุ้มค่า</h3><p>ใช้ Optimization จัดออเดอร์และรถที่มีให้เหมาะสม ครอบคลุม Load Planning, Routing, Truck Utilization และ Delivery Constraints</p></div>
+<div class="card"><h3>Execute Faster: เปลี่ยนแผนเป็นงานจริง</h3><p>จองรถ จัดการ Shipment และประสานงาน Transporter ใน workflow เดียว</p></div>
+<div class="card"><h3>See What’s Happening: รู้สถานะทุกเที่ยว</h3><p>ติดตามสถานะตั้งแต่รถออกจนส่งสำเร็จ ผ่าน Operational Dashboard</p></div>
+<div class="card"><h3>Connect Your Operation: เชื่อมระบบเดิม</h3><p>เชื่อมข้อมูลออเดอร์และการขนส่งผ่าน API กับ ERP และระบบอื่นขององค์กร</p></div>
+</div></div></section>
+
+<section id="calc"><div class="w">
+<h2>งานขนส่งของคุณมีโอกาสประหยัดเท่าไหร่?</h2>
+<div class="tool">
+<div class="box"><h3 style="margin-bottom:14px">Transportation Saving Calculator</h3>
+<div class="fm">
+<label>จำนวนรถ / วัน<input id="ct" type="number" min="1" value="100"></label>
+<label>ต้นทุนเฉลี่ยต่อเที่ยว (บาท)<input id="cc" type="number" min="0" value="6000"></label>
+<label>วันทำงาน / เดือน<input id="cd" type="number" min="1" max="31" value="26"></label>
+<label>Utilization ปัจจุบัน (%)<input id="cu" type="number" min="1" max="100" value="68"></label>
+</div>
+<p style="margin:16px 0 4px;color:var(--mut)">เป้าหมาย Utilization: 80%</p>
+<span class="big" id="cm"></span><div id="cs" style="font-weight:500"></div>
+<p class="note">เป็นการประมาณการเบื้องต้นเท่านั้น ผลที่ได้จริงขึ้นกับเงื่อนไขการขนส่งและการดำเนินงาน</p>
+<a class="btn" href="#demo">ให้เราวิเคราะห์งานขนส่งของคุณ</a></div>
+<div class="box"><h3 style="margin-bottom:6px">Optimize My Plan</h3><p style="margin:0;color:var(--mut)">30 ออเดอร์ จัดลงรถ 12 คัน</p>
+<div class="fl" id="fl"></div>
+<div style="font-weight:500" id="fr">รถ 12 คัน · Utilization 64%</div>
+<p style="margin:16px 0"><button class="btn o" id="fb" type="button">Optimize My Plan</button></p>
+<p class="note">Example optimization scenario ตัวอย่างประกอบ ไม่ใช่การรับประกันผลลัพธ์</p></div>
+</div></div></section>
+
+<section id="why"><div class="w">
+<h2>6 เหตุผลที่องค์กรขนาดใหญ่เลือก 360TechX TMS</h2>
+<p class="lead">ตั้งแต่การวางแผน การควบคุม ไปจนถึงการเพิ่มกำลังรถ ครบในระบบเดียว</p>
+<div class="g3">
+<div class="card"><h3>1. AI-Powered Route Planning &amp; Dispatch Optimization</h3><p><b>ระบบวางแผนการจัดส่งสินค้าและเส้นทางอัจฉริยะด้วย AI:</b> คำนวณการจัดเที่ยวรถ (FTL/LTL) และจัดสายส่งหลายจุด (Multi-drop) โดยคำนึงถึงเงื่อนไขทางธุรกิจจริง เช่น น้ำหนัก/ปริมาตรบรรทุก, ช่วงเวลาเข้า-ส่งสินค้า (Time-Slot Constraints) และประเภทรถ</p><div class="imp">📉 ลดต้นทุนน้ำมัน 15-20%<br>⏱️ ลดเวลาวางแผนจาก 3 ชม. เหลือ 15 นาที</div></div>
+<div class="card"><h3>2. Sub-contractor Vendor Management</h3><p><b>ระบบบริหารรถร่วมและผู้รับเหมาช่วง:</b> จัดสรรงานให้อย่างเป็นระบบ กระจายงานตามสัญญาจ้าง (SLA) ออกใบสั่งจ้าง ติดตามสถานะ e-POD แบบ Real-time และคำนวณค่าเที่ยวให้อัตโนมัติ</p><div class="imp">🤝 ควบคุมมาตรฐานการบริการและตรวจสอบต้นทุน Sub-contractor ได้แม่นยำเทียบเท่า Fleet ของตนเอง</div></div>
+<div class="card"><h3>3. Seamless Integration - Enterprise Standard RESTful API</h3><p><b>ระบบ API มาตรฐานระดับองค์กร พร้อมเชื่อมต่อ ERP &amp; WMS:</b> รองรับการเชื่อมต่อข้อมูลสองทาง (Bi-directional Data Exchange) เข้ากับ SAP, Oracle, Microsoft Dynamics และ WMS ชั้นนำได้อย่างราบรื่น</p><div class="imp">🔄 เชื่อมโยงข้อมูล Sales Order/Delivery Order และอัปเดต e-POD กลับไปยังระบบหลักโดยอัตโนมัติ ลดข้อผิดพลาดจากการคีย์ข้อมูล Manual 100%</div></div>
+<div class="card"><h3>4. Centralized Multi-Brand GPS Monitoring</h3><p><b>ระบบศูนย์รวมการติดตาม GPS หลากหลายแบรนด์ (20+ Providers):</b> ดึงสัญญาณ GPS จากผู้ให้บริการชั้นนำกว่า 20+ เจ้า มารวมแสดงผลบน Dashboard เดียวแบบ Real-time ไม่ต้องสลับหน้าจอ</p><div class="imp">📍 เห็นภาพรวมการเคลื่อนที่ของ Fleet ทั้งหมดบนแผนที่เดียว เพิ่มประสิทธิภาพในการควบคุมติดตามและความปลอดภัย</div></div>
+<div class="card"><h3>5. Unlimited Truck License &amp; Driver App</h3><p><b>โมเดลราคาคุ้มค่า:</b> ไม่คิดค่าลิขสิทธิ์เพิ่มตามจำนวนทะเบียนรถหรือจำนวนคนขับ เพิ่ม fleet ได้ไม่จำกัด</p><div class="imp">💰 ควบคุม TCO (Total Cost of Ownership) ได้คงที่ ตอบโจทย์องค์กรที่ต้องการขยาย Fleet หรือใช้รถร่วมจำนวนมากโดยไม่มีภาระค่าใช้จ่ายแอบแฝง</div></div>
+<div class="card"><h3>6. 360TRUCK Crowdsourcing Integration (Asset-Light Fleet)</h3><p><b>เชื่อมต่อ Platform รถเสริม:</b> กดเรียกรถเสริมเมื่อเข้าช่วง Peak Season หรือ Fleet ไม่พอได้ทันทีผ่านระบบ ดึงข้อมูลรถบรรทุกในเครือข่ายมากกว่า 100,000+ คันทั่วประเทศ</p><div class="imp">📈 Zero Capacity Risk: หมดปัญหารถไม่พอส่งสินค้า ไม่เสียโอกาสทางธุรกิจช่วง Peak Period</div></div>
+</div></div></section>
+
+<section id="industry" style="background:var(--card);border-block:1px solid var(--line)"><div class="w">
+<h2>โซลูชันที่ออกแบบตามความท้าทายของแต่ละอุตสาหกรรม</h2>
+<div class="tabs" role="tablist" aria-label="อุตสาหกรรม">
+<button role="tab" aria-selected="true" data-i="0">🏭 โรงงานผู้ผลิต</button>
+<button role="tab" aria-selected="false" data-i="1">📦 ศูนย์กระจายสินค้า (DC)</button>
+<button role="tab" aria-selected="false" data-i="2">🚚 3PL และโลจิสติกส์</button>
+</div>
+<div class="panel" id="panel" role="tabpanel" aria-live="polite"></div>
+</div></section>
+
+<section class="truck" id="truck"><div class="w">
+<h2>รถไม่พอ ไม่ใช่ปัญหาอีกต่อไป</h2>
+<p class="lead">เมื่อ Fleet หลักเต็มหรือเข้าช่วง Peak Season เรียกรถเสริมจากเครือข่าย 360TRUCK ที่ผ่านการคัดกรองกว่า 100,000 คัน ได้จากหน้าจอ TMS เดิม โดยไม่ต้องลงทุนซื้อรถเพิ่ม</p>
+<div class="steps"><div><b>วางแผนใน TMS ตามปกติ</b></div><div><b>กดจ่ายงานส่วนเกินเข้า 360TRUCK</b></div><div><b>ติดตามสถานะและ e-POD บน Dashboard เดียวกับรถของคุณ</b></div></div>
+<p style="margin-top:28px"><a class="btn" style="background:#fff;color:#14213d;border-color:#fff" href="#demo">ดูการทำงานในการสาธิตระบบ</a></p>
+</div></section>
+
+<section><div class="w">
+<h2>ผลลัพธ์ที่วัดได้จริงกับองค์กรที่ใช้ 360TechX TMS</h2>
+<div class="stats">
+<div class="stat"><b>15–20%</b>ลดต้นทุนน้ำมันและระยะทางจัดส่งเฉลี่ย</div>
+<div class="stat"><b>15 นาที</b>วางแผนสายส่งจากเดิมหลายชั่วโมง</div>
+<div class="stat"><b>98%+</b>อัตราส่งตรงเวลา (On-time Delivery)</div>
+</div>
+<p class="note">ผลลัพธ์อ้างอิงจากการใช้งานจริงของลูกค้า Enterprise ผลที่ได้อาจแตกต่างกันตามรูปแบบธุรกิจและขนาด Fleet</p>
+</div></section>
+
+<section id="score"><div class="w">
+<h2>งานขนส่งของคุณมีประสิทธิภาพแค่ไหน?</h2>
+<p class="lead">ตอบ 5 ข้อสั้นๆ เพื่อดูจุดที่ยังปรับปรุงได้ และให้ทีมขายเริ่มคุยกับคุณได้ตรงจุด</p>
+<div class="box" style="margin-top:28px;max-width:760px"><div id="qs"></div>
+<p style="margin:18px 0 0"><button class="btn" id="qb" type="button">ดูคะแนน</button></p>
+<div id="qr" role="status" style="margin-top:16px"></div></div>
+</div></section>
+
+<section id="plans" style="background:var(--card);border-block:1px solid var(--line)"><div class="w">
+<h2>แพ็กเกจ 360TECHX</h2>
+<p class="lead">ทุกแพ็กเกจไม่จำกัดจำนวนผู้ใช้งาน รถ และคนขับ</p>
+<div class="g3 g2">
+<div class="card price"><h3>Basic</h3><p>ธุรกิจขนส่งขนาดเล็กถึงกลาง (SME)</p><ul><li>สูงสุด 100 งานต่อเดือน</li><li>จ่ายงานผ่านแอป 360TRUCKER</li><li>คำนวณค่าเที่ยวในระบบเดียว</li></ul><a class="btn o" href="#demo">เริ่มต้นใช้งานฟรี</a></div>
+<div class="card price rec"><h3>Enterprise</h3><p>องค์กรขนาดใหญ่ โรงงาน DC และ 3PL</p><ul><li>มากกว่า 2,000 งานต่อเดือน</li><li>AI วางแผนและจัดขนส่งอัตโนมัติ</li><li>เชื่อมต่อ ERP/WMS และปรับแต่งระบบ</li><li>เรียกรถเสริมผ่าน 360TRUCK</li></ul><a class="btn" href="#demo">นัดหมายสาธิตระบบ</a></div>
+</div></div></section>
+
+<section id="faq"><div class="w">
+<h2>คำถามที่พบบ่อย</h2>
+<details open><summary>360TechX TMS เชื่อมต่อกับ SAP หรือ WMS เดิมขององค์กรได้อย่างไร?</summary><p>เชื่อมต่อผ่าน Enterprise RESTful API แบบสองทาง กับ SAP, Microsoft Dynamics, Oracle และ WMS ระบบดึง Delivery Order มาวางแผนด้วย AI และส่งสถานะ e-POD กลับ ERP แบบ Real-time</p></details>
+<details><summary>รองรับ GPS แบรนด์ใดบ้าง ต้องติด GPS ใหม่หรือไม่?</summary><p>ไม่ต้องติดใหม่ ระบบเชื่อมต่อ API กับผู้ให้บริการ GPS มากกว่า 20 รายในไทย แล้วแสดงทุกคันบน Dashboard เดียว</p></details>
+<details><summary>คิดค่าบริการอย่างไร จำกัดจำนวนรถหรือไม่?</summary><p>ไม่จำกัด ใช้โมเดล Unlimited Truck License and Driver App ไม่คิดค่าลิขสิทธิ์เพิ่มตามจำนวนทะเบียนรถหรือผู้ใช้แอปคนขับ ช่วยควบคุม TCO ได้คงที่</p></details>
+<details><summary>แก้ปัญหารถไม่พอช่วง Peak Season ได้อย่างไร?</summary><p>เชื่อมต่อ 360TRUCK Crowdsourcing Platform ที่มีรถบรรทุกผ่านการคัดกรองกว่า 100,000 คันทั่วประเทศ กดเรียกรถเสริมจากหน้าจอ TMS ได้ทันที</p></details>
+<details><summary>Enterprise ต่างจาก Basic อย่างไร?</summary><p>Enterprise รองรับมากกว่า 2,000 งานต่อเดือน มี AI วางแผนอัตโนมัติ เชื่อมต่อ ERP/WMS บริหารผู้รับเหมา และปรับแต่งระบบได้</p></details>
+</div></section>
+
+<section class="demo" id="demo"><div class="w">
+<div>
+<h2>พร้อมยกระดับประสิทธิภาพขนส่งและควบคุมต้นทุน Fleet แล้วหรือยัง?</h2>
+<p class="lead">กรอกข้อมูล ทีมผู้เชี่ยวชาญจะติดต่อกลับเพื่อนัดสาธิตระบบและประเมิน ROI ให้ฟรี</p>
+<p class="lead">โทร <a href="tel:0992611699">+66 (0)99 261 1699</a><br>อีเมล <a href="mailto:info@360techx.co">info@360techx.co</a></p>
+</div>
+<form id="f">
+<label>ชื่อ-นามสกุล<input required autocomplete="name"></label>
+<label>ตำแหน่งงาน<input required placeholder="เช่น Logistics Director"></label>
+<label class="f">ชื่อบริษัท / องค์กร<input required autocomplete="organization"></label>
+<label>ประเภทธุรกิจ<select required><option value="">เลือก</option><option>โรงงานผู้ผลิต</option><option>ศูนย์กระจายสินค้า (DC)</option><option>ผู้ให้บริการ 3PL</option><option>อื่นๆ</option></select></label>
+<label>ขนาด Fleet โดยประมาณ<select required><option value="">เลือก</option><option>1–30 คัน</option><option>31–100 คัน</option><option>100+ คัน</option></select></label>
+<label>เบอร์โทรศัพท์<input type="tel" required autocomplete="tel"></label>
+<label>อีเมลองค์กร<input type="email" required autocomplete="email"></label>
+<button class="btn" type="submit">ขอรับการสาธิตระบบ (Request Enterprise Demo)</button>
+<div id="ok" role="status">ส่งข้อมูลเรียบร้อย ทีมงานจะติดต่อกลับภายในเวลาทำการ</div>
+</form>
+</div></section>
+</div>
+<div class="page" id="pg-e">
+<div class="hero"><div class="w"><div><h1>ยกระดับ Logistics Ecosystem ขององค์กร สู่ระบบบริหารการขนส่งระดับ Enterprise ที่เชื่อมโยง ไร้รอยต่อ และสเกลได้ไม่จำกัด</h1>
+<p>ก้าวข้ามขีดจำกัดของระบบ TMS แบบเดิมๆ สู่การทำงานรูปแบบ Convergent Processes ที่ผสาน True AI Optimization, Built-to-Suit Customization และเครือข่ายรถเสริม 100,000+ คัน ไว้ใน Centralized Cloud Platform เดียวกัน</p>
+<div class="bd"><span>True AI Optimization</span><span>Built-to-Suit Customization</span><span>100k+ On-Demand Fleet</span></div>
+<div class="cta"><a class="btn" href="#demo">นัดหมายปรึกษาผู้เชี่ยวชาญโซลูชันองค์กร</a><a class="btn o" href="#demo">ดาวน์โหลด Enterprise Whitepaper</a></div></div></div></div>
+<section id="vision"><div class="w"><h2>TMS Enterprise: ความเป็นที่สุดที่แตกต่างจากคู่แข่ง</h2><div class="ex"><p>ในยุคที่ห่วงโซ่อุปทาน (Supply Chain) ต้องเผชิญกับความผันผวนของต้นทุน ความซับซ้อนของการบริหาร Fleet และความคาดหวังในการจัดส่งที่รวดเร็วขึ้น <b>องค์กรระดับ Enterprise ทั้งโรงงานผู้ผลิต ศูนย์กระจายสินค้า (DC) และ 3PL รายใหญ่</b> ต่างต้องเผชิญโจทย์ยากในการบริหารจัดการการขนส่งที่มีเงื่อนไขเฉพาะตัวเกินกว่าที่ระบบ TMS ทั่วไปในตลาดจะรองรับได้</p><p><b>360TechX Enterprise</b> ถูกพัฒนาขึ้นเพื่อแก้โจทย์ความซับซ้อนนี้โดยเฉพาะ ด้วยการก้าวข้ามการเป็นเพียงซอฟต์แวร์จัดรถแบบเดิม สู่การเป็น <b>Centralized Logistics Ecosystem</b> บนคลาวด์แพลตฟอร์มที่รวมความเชี่ยวชาญเชิงลึกด้าน Logistics &amp; Supply Chain เข้ากับเทคโนโลยีระดับพรีเมียม</p></div><div class="g3"><div class="card"><h3>True AI-Driven Planning &amp; Scheduling Optimization</h3><p>ประมวลผลและวางแผนเส้นทางจัดสายส่งอัจฉริยะด้วย AI แท้จริง คำนึงถึงข้อจำกัดจริงทุกมิติ (เงื่อนไขเวลา, น้ำหนัก, Multi-drop) ช่วยลดต้นทุนน้ำมันและเวลางานอย่างแม่นยำ</p></div><div class="card"><h3>Enterprise Built-to-Suit Flexibility</h3><p>พร้อมปรับแต่ง (Customize) และออกแบบสถาปัตยกรรมระบบให้สอดรับกับ Workflow ทางธุรกิจ ระบบ ERP/WMS และโครงสร้างองค์กรที่มีความเฉพาะตัวได้อย่างสมบูรณ์แบบ</p></div><div class="card"><h3>Unlimited Fleet &amp; Crowdsourcing Integration</h3><p>ดึงข้อมูลอัตโนมัติจาก ERP/WMS พร้อมปลดล็อกข้อจำกัดด้าน Fleet ด้วยการเชื่อมต่อเครือข่ายรถเสริมกว่า 100,000+ คันจาก 360TRUCK เข้ามารับงานช่วง Peak Season ได้ทันที</p></div></div><p style="margin-top:24px">ช่วยให้องค์กรของคุณบริหารการขนส่งได้อย่างแม่นยำ ยกระดับกระบวนการทำงาน ควบคุมต้นทุน TCO ได้อย่างยั่งยืน และพร้อมสเกลธุรกิจต้อนรับทุกโอกาสการเติบโตอย่างมั่นคง</p></div></section>
+<section id="process" style="background:var(--card);border-block:1px solid var(--line)"><div class="w"><h2>Convergent Processes &amp; Operational Excellence</h2><p class="lead">TMS ไม่ใช่แค่ซอฟต์แวร์จัดรถ แต่คือการรวมศูนย์การทำงานของทุกฝ่าย (คลัง, จัดส่ง, Sub-contractor, คนขับ) ไว้ในระบบเดียว ทำงานได้จากทุกที่ (Work From Anywhere)</p><div class="g3 seq"><div class="card"><h3>Automated Order Processing</h3><p>ดึงคำสั่งซื้อจาก ERP/WMS ผ่าน API 100% แทนการคีย์ Manual</p></div><div class="card"><h3>AI-Driven Dispatching &amp; Optimization</h3><p>AI คำนวณจัดเที่ยวรถ (FTL/LTL) และลำดับจุดส่ง (Multi-drop) อัตโนมัติในไม่กี่นาที</p></div><div class="card"><h3>Real-Time Centralized Tracking</h3><p>มอนิเตอร์รถทุกคันจาก GPS 20+ แบรนด์ในหน้าจอเดียว พร้อมระบบ ETA Delay Alerts</p></div><div class="card"><h3>Digital ePOD &amp; Fast Billing</h3><p>คนขับส่งหลักฐานผ่านแอป 360TRUCKER เพื่อออกใบแจ้งหนี้ (Billing) ได้ทันที</p></div><div class="card"><h3>On-Demand Fleet Capacity</h3><p>กดปล่อยงานส่วนเกินเข้าเครือข่าย 360TRUCK เมื่อ Fleet หลักเต็ม ลดความเสี่ยงช่วง Peak Season</p></div><div class="card"><h3>Data-Driven Analytics</h3><p>แดชบอร์ดสรุป KPI (On-Time Delivery, Utilization Rate) แบบ Real-time</p></div></div></div></section>
+<section id="cloud"><div class="w"><h2>Centralized Cloud Ecosystem &amp; Integration</h2><p class="lead">สถาปัตยกรรมระบบที่ปลอดภัยและเชื่อมต่อได้ สำหรับทีม IT และผู้บริหาร</p><div class="g3"><div class="card"><h3>Cloud-Native Architecture</h3><p>ระบบทำงานบน Cloud 100% ประมวลผลเสถียร รองรับ Transaction ปริมาณมหาศาล</p></div><div class="card"><h3>Enterprise Standard RESTful API</h3><p>เชื่อมต่อข้อมูลสองทาง (Bi-directional Data Sync) ร่วมกับ SAP (S/4HANA), Microsoft Dynamics 365, Oracle และ WMS</p></div><div class="card"><h3>Centralized Multi-GPS Gateway</h3><p>รวมสัญญาณ GPS Multi-brand กว่า 20+ เจ้าเข้ามาที่แดชบอร์ดเดียวโดยไม่ต้องเปลี่ยนอุปกรณ์เดิม</p></div></div><div class="dg" role="img" aria-label="ERP/WMS เชื่อมกับ 360TechX API Gateway และ TMS Core Engine"><div>ERP / WMS</div><i>↔</i><div>360TechX API Gateway</div><i>↔</i><div>TMS Core Engine</div></div></div></section>
+<section id="bflow" style="background:var(--card);border-block:1px solid var(--line)"><div class="w"><h2>กระบวนการทำงานแบบไร้รอยต่อ</h2><p class="lead">Business Flow ตั้งแต่รับออเดอร์ มอบหมายงาน ติดตาม ไปจนถึงชำระค่าขนส่ง</p><div class="g3 g4 seq"><div class="card"><h3>ORDER PLANNING</h3><ul class="fz" style="padding-left:18px;margin:0"><li><b>API Order</b><small>รองรับการเชื่อมต่อระบบ WMS ERP ชั้นนำระดับโลก (SAP, Oracle, Microsoft)</small></li><li><b>Automate Planning</b><small>วางแผนการขนส่งสินค้าจาก 3 ชั่วโมง เหลือเพียง 3 นาที</small></li></ul></div><div class="card"><h3>JOB ASSIGNMENT</h3><ul class="fz" style="padding-left:18px;margin:0"><li><b>Free TMS For Carrier</b><small>Standardize to every parts</small></li><li><b>360TRUCKER APP</b><small>ผู้ให้บริการขนส่งตอบรับงาน และอัปเดตสถานะการขนส่งผ่านแอป</small></li><li><b>360TRUCK Crowdsourcing</b><small>เชื่อมต่อกับแพลตฟอร์ม 360TRUCK หาผู้ให้บริการขนส่งได้อย่างไร้รอยต่อ</small></li></ul></div><div class="card"><h3>MONITORING</h3><ul class="fz" style="padding-left:18px;margin:0"><li><b>Queue Management</b><small>การจัดการคิว จัดลำดับ ควบคุม และกระจายงานผู้ให้บริการขนส่ง</small></li><li><b>Instant Performance Report</b><small>แดชบอร์ดรายงานผลการดำเนินงานแบบเรียลไทม์</small></li><li><b>GPS Gateway</b><small>สามารถเชื่อมต่อข้อมูล GPS ได้มากกว่า 20 แบรนด์ในระบบเดียว</small></li></ul></div><div class="card"><h3>SETTLEMENT</h3><ul class="fz" style="padding-left:18px;margin:0"><li><b>API Cost Billing</b><small>Seamless Integration กับ SAP, Oracle, Microsoft</small></li><li><b>Automate Cost Calculation</b><small>ระบบคำนวณค่าใช้จ่ายอัตโนมัติสำหรับผู้ให้บริการขนส่ง</small></li><li><b>อนุมัติจ่ายค่าขนส่ง</b><small>บัญชีสามารถทำจ่ายผู้ให้บริการขนส่งได้อย่างถูกต้อง และแม่นยำ</small></li></ul></div></div></div></section>
+<section id="suit" style="background:var(--card);border-block:1px solid var(--line)"><div class="w"><h2>Logistics Domain Knowledge &amp; Built-to-Suit Flexibility</h2><p class="lead">ออกแบบระบบให้ลงตัวกับความเฉพาะตัวของธุรกิจ</p><div class="g3 g4"><div class="card"><h3>Logistics &amp; Supply Chain Expertise</h3><p>เรานำความเชี่ยวชาญเชิงลึกในอุตสาหกรรมมาช่วยยกระดับและออกแบบกระบวนการทำงาน (Process Transformation)</p></div><div class="card"><h3>Custom Workflows &amp; Business Rules</h3><p>ปรับเงื่อนไขการอนุมัติงาน และระบบจัดคิวรถเข้า-ออกคลัง (Dock Management)</p></div><div class="card"><h3>Advanced Costing &amp; Tariff Rules</h3><p>กำหนดสูตรคำนวณค่าน้ำมัน ค่าเที่ยว และสัญญารถร่วม (Sub-contractors) ที่ซับซ้อนตามจริง</p></div><div class="card"><h3>Multi-Branch &amp; Multi-Entity Hierarchy</h3><p>รองรับโครงสร้างองค์กรใหญ่ที่มีหลายบริษัทในเครือ หลาย DC พร้อมระบบสิทธิ์ผู้ใช้งาน (RBAC)</p></div></div><h3 style="margin-top:44px">360TECHX Enterprise ให้บริการด้านใดบ้าง</h3><div class="g3 g4"><div class="card"><h3>Consultation</h3><p>ให้คำปรึกษาการประยุกต์ใช้ TMS และวางสถาปัตยกรรมระบบ/Business Blueprint</p></div><div class="card"><h3>Customization</h3><p>ปรับแต่งระบบ เชื่อมต่อ ERP/WMS และบริหารโครงการให้แล้วเสร็จตามแผน</p></div><div class="card"><h3>Support</h3><p>ผู้เชี่ยวชาญดูแลการทำงานของระบบและสนับสนุนการใช้งาน (Support Service)</p></div><div class="card"><h3>System Integration</h3><p>บริการของพันธมิตร เช่น ปรับแต่ง ERP (SAP, MS Dynamics) และติดตั้งบน Cloud เช่น AWS, Google</p></div></div></div></section>
+<section id="community"><div class="w"><h2>Logistics Digital Community &amp; Fleet Synergy</h2><p class="lead">มากกว่าระบบ TMS แต่เป็นการเข้าร่วม Ecosystem โลจิสติกส์ที่ครบวงจรที่สุด</p><div class="g3 g4"><div class="card"><h3>1. Asset-Light Capacity Scaling</h3><p>เชื่อมต่อ 360TRUCK Platform ดึงรถเสริมคุณภาพสูง 100,000+ คันเข้ามารับงานช่วง Peak Season โดยไม่ต้องลงทุนซื้อรถเพิ่ม</p></div><div class="card"><h3>2. Backhaul Optimization</h3><p>เพิ่มโอกาสสร้างรายได้จากรถเที่ยวว่างด้วยการนำ Fleet ที่ว่างเข้าร่วมรับงานในเครือข่าย 360TRUCK</p></div><div class="card"><h3>3. Seamless Vendor Management</h3><p>เชื่อมต่อการสั่งงานและติดตาม Sub-contractors ที่ใช้ TMS Basic for Carrier ไร้รอยต่อ</p></div><div class="card"><h3>4. 360TRUCKER Mobile App</h3><p>แอปพลิเคชันฝั่งคนขับสำหรับรับงาน นำทาง และอัปเดต ePOD แบบไม่มีค่าใช้จ่ายเพิ่มเติม</p></div></div></div></section>
+<section id="roi" style="background:var(--card);border-block:1px solid var(--line)"><div class="w"><h2>ผลตอบแทนการลงทุน (ROI) ที่วัดได้</h2><div class="stats" style="grid-template-columns:repeat(4,1fr)"><div class="stat"><b>12–20%</b>📉 ลดต้นทุนค่าน้ำมันและค่าขนส่งรวม</div><div class="stat"><b>15 นาที</b>⏱️ ลดเวลาการวางแผนสายส่งจาก 3 ชม.</div><div class="stat"><b>+25%</b>🚚 เพิ่ม Fleet Utilization Rate</div><div class="stat"><b>98.5%+</b>📦 อัตราการจัดส่งตรงเวลา (OTD)</div></div><style>@media(max-width:800px){.stats{grid-template-columns:1fr 1fr!important}}@media(max-width:500px){.stats{grid-template-columns:1fr!important}}</style><div class="box" style="margin-top:28px"><h3>Enterprise Success Story</h3><p style="color:var(--mut);margin:6px 0 0">กรณีศึกษาความสำเร็จของศูนย์กระจายสินค้า (DC) และ 3PL รายใหญ่ในการใช้ AI Optimization และรถเสริมช่วง Peak Season</p><div class="shot" style="margin-top:14px">พื้นที่วางกรณีศึกษาจริง (ชื่อลูกค้า โจทย์ ผลลัพธ์)</div></div></div></section>
+<section class="demo" id="demo"><div class="w">
+<div>
+<h2>พร้อมยกระดับประสิทธิภาพขนส่งและควบคุมต้นทุน Fleet แล้วหรือยัง?</h2>
+<p class="lead">กรอกข้อมูล ทีมผู้เชี่ยวชาญจะติดต่อกลับเพื่อนัดสาธิตระบบและประเมิน ROI ให้ฟรี</p>
+<p class="lead">โทร <a href="tel:0992611699">+66 (0)99 261 1699</a><br>อีเมล <a href="mailto:info@360techx.co">info@360techx.co</a></p>
+</div>
+<form id="ef">
+<label>ชื่อ-นามสกุล<input required autocomplete="name"></label>
+<label>ตำแหน่งงาน<input required placeholder="เช่น Logistics Director"></label>
+<label class="f">ชื่อบริษัท / องค์กร<input required autocomplete="organization"></label>
+<label>ประเภทธุรกิจ<select required><option value="">เลือก</option><option>โรงงานผู้ผลิต</option><option>ศูนย์กระจายสินค้า (DC)</option><option>ผู้ให้บริการ 3PL</option><option>อื่นๆ</option></select></label>
+<label>ขนาด Fleet โดยประมาณ<select required><option value="">เลือก</option><option>1–30 คัน</option><option>31–100 คัน</option><option>100+ คัน</option></select></label>
+<label class="f">ระบบ ERP ที่ใช้อยู่<input placeholder="เช่น SAP, Oracle, Microsoft Dynamics"></label>
+<label>เบอร์โทรศัพท์<input type="tel" required autocomplete="tel"></label>
+<label>อีเมลองค์กร<input type="email" required autocomplete="email"></label>
+<button class="btn" type="submit">ขอรับการสาธิตระบบ (Request Enterprise Demo)</button>
+<div id="eok" role="status">ส่งข้อมูลเรียบร้อย ทีมงานจะติดต่อกลับภายในเวลาทำการ</div>
+</form>
+</div></section>
+</div>
+<div class="page" id="pg-b"><div class="hero"><div class="w" style="grid-template-columns:1fr"><div><h1 style="max-width:26ch">เปลี่ยนการจัดรถเรื่องยาก ให้เป็นเรื่องง่าย พร้อมปลดล็อกปัญหารถว่าง หารายได้เพิ่มได้ทันทีในระบบเดียว</h1><p>ยกระดับการบริหารงานขนส่งด้วย <b>360TechX TMS Basic</b> ระบบจัดรถและติดตามสถานะบนคลาวด์ที่ออกแบบมาเพื่อ SMEs โดยเฉพาะ เริ่มต้นใช้งานได้ทันที ไม่ต้องติดตั้งโปรแกรม</p><div class="bd"><span>เริ่มต้นใช้งานฟรี</span><span>หางานเพิ่ม ลดรถเที่ยวเปล่า</span><span>เหมาะสำหรับ ≤ 100 เที่ยว/เดือน</span></div><div class="cta"><a class="btn" href="#bform">สมัครทดลองใช้งานฟรี</a><a class="btn o" href="#bplans">ดูแพ็กเกจราคา</a></div></div></div></div><section id="bintro"><div class="w"><h2>ขนส่งแบบดิจิทัล สำหรับ SMEs ที่เริ่มต้นง่าย</h2><div class="ex"><p>ผู้ประกอบการขนส่งขนาดเล็กและ SMEs จำนวนมากยังปรินท์เอกสารสั่งงาน ตามงานผ่านไลน์ หรือบันทึกข้อมูลจัดรถลงใน Excel ซึ่งทำให้เสียเวลาและเกิดข้อผิดพลาดได้ง่าย <b>360TechX TMS Basic</b> ถูกออกแบบมาเพื่อเปลี่ยนผ่านธุรกิจของคุณสู่ระบบดิจิทัลอย่างเรียบง่าย ตอบโจทย์ธุรกิจที่มียอดจัดส่งไม่เกิน 100 เที่ยว/เดือน ไม่เพียงรวมทุกฟังก์ชันสำคัญไว้ในที่เดียว ทั้งการสร้างงาน จ่ายงานให้คนขับ ติดตามสถานะ ePOD ผ่าน Mobile App และสรุปสถานะจัดส่ง ช่วยลดเวลาทำงานเอกสาร แต่ยังเปิดโอกาสให้คุณ <b>เข้าถึงแหล่งหางานขนส่งจาก Platform 360TRUCK</b> ที่มีงานครอบคลุมทั่วประเทศ ช่วยแก้ปัญหารถว่างงาน เพิ่มรายได้ให้ธุรกิจของคุณเติบโตได้อย่างยั่งยืนในแพลตฟอร์มเดียว</p></div></div></section>
+<section id="bfeat" style="background:var(--card);border-block:1px solid var(--line)"><div class="w"><h2>4 เครื่องมือสำคัญ ที่ SMEs ใช้ได้ทันที</h2><p class="lead">ฟังก์ชันที่เรียบง่ายและทันสมัย เหมาะกับธุรกิจขนส่งขนาดเล็ก</p><div class="g3 g2"><div class="card"><h3>Easy Dispatching (สร้างและจ่ายงานใน 1 นาที)</h3><ul style="padding-left:18px;margin:8px 0 0;color:var(--mut)"><li>บันทึกข้อมูลงานขนส่ง คลังสินค้า ต้นทาง-ปลายทาง ได้รวดเร็ว</li><li>กระจายงานเข้าสมาร์ทโฟนของคนขับผ่านแอป 360TRUCKER ได้ทันที</li></ul></div><div class="card"><h3>Mobile App Tracking Location (ติดตามสถานะสินค้าได้ทุกที่)</h3><ul style="padding-left:18px;margin:8px 0 0;color:var(--mut)"><li>ตรวจสอบตำแหน่งรถและสถานะการจัดส่ง (กำลังไปส่ง / ถึงจุดส่ง / ส่งเสร็จสิ้น) บนหน้าจอเดียว</li><li>ไม่ต้องติดตั้งอุปกรณ์ GPS อัปเดตสถานะการเดินทางแบบ Real-time ผ่าน Mobile App บนสมาร์ทโฟนของคนขับโดยตรง</li><li>แชร์ลิงก์ติดตามสถานะ (Tracking Link) ให้ลูกค้าปลายทางดูได้โดยไม่ต้องโทรสอบถาม</li></ul></div><div class="card"><h3>Digital POD &amp; Signature (หลักฐานการส่งมอบดิจิทัล)</h3><ul style="padding-left:18px;margin:8px 0 0;color:var(--mut)"><li>คนขับถ่ายรูปสินค้าตอนส่งมอบและให้ลูกค้าเซ็นรับผ่านหน้าจอมือถือ</li><li>ข้อมูลอัปเดตกลับมาที่ระบบกลางทันที ทีมงานสำนักงานและลูกค้าตรวจสอบภาพหลักฐานได้รวดเร็ว ไม่ต้องส่งผ่านไลน์ ลดขั้นตอนจัดเก็บรูป</li></ul></div><div class="card"><h3>Basic Performance Dashboard (สรุปภาพรวมธุรกิจ)</h3><ul style="padding-left:18px;margin:8px 0 0;color:var(--mut)"><li>แดชบอร์ดสรุปจำนวนเที่ยววิ่ง รายงานการจัดส่ง รายได้และค่าใช้จ่ายพื้นฐาน Export เป็นไฟล์ Excel ได้ง่ายๆ</li></ul></div></div></div></section>
+<section id="brev"><div class="w"><h2>หารายได้เพิ่มจากรถว่าง ด้วยเครือข่าย 360TRUCK</h2><div class="g3"><div class="card"><h3>1. Unlock Backhaul Revenue (ลดรถเที่ยวเปล่า หารายได้เพิ่ม)</h3><p>ในกรณีที่บริษัทขนส่งมีรถว่าง หรือต้องการหางานขากลับ (Return Trip) ระบบจะเชื่อมต่อไปยัง 360TRUCK Platform ที่มีงานขนส่งกระจายอยู่ทั่วประเทศ ช่วยลดปัญหารถว่างงานและสร้างรายได้เพิ่มให้ธุรกิจ</p></div><div class="card"><h3>2. 360TRUCKER Driver Mobile App</h3><p>แอปพลิเคชันฝั่งคนขับที่ใช้ง่าย ทำหน้าที่ทั้งรับงานในบริษัท และกดรับงานเสริมจากเครือข่าย 360TRUCK ได้อย่างไร้รอยต่อ ไม่มีค่าใช้จ่ายเพิ่มเติมต่อคัน</p></div><div class="card"><h3>3. Easy Upgrade Path</h3><p>เมื่อธุรกิจเติบโตขึ้นและมียอดจัดส่งเกิน 100 เที่ยว/เดือน สามารถอัปเกรดขึ้นไปใช้เวอร์ชัน Enterprise เพื่อใช้งาน AI Route Optimization และเชื่อมต่อระบบ ERP ได้อย่างไร้รอยต่อ</p></div></div><h3 style="margin-top:44px">ตัวช่วยอื่นในระบบ</h3><div class="g3"><div class="card"><h3>บันทึกค่าขนส่ง ขาเก็บ/ขาจ่าย ได้ทั้งภาพรวมและรายเที่ยว</h3><p>ระบบตะกร้าบิล บันทึกบิล และ ค่าใช้จ่ายเพิ่มเติมได้สะดวก</p></div></div></div></section>
+<section id="bplans" style="background:var(--card);border-block:1px solid var(--line)"><div class="w"><h2>แพ็กเกจและราคา</h2><p class="lead">โครงสร้างราคาที่จับต้องได้ เหมาะกับ SMEs</p><div style="overflow-x:auto;margin-top:28px"><table style="border-collapse:collapse;width:100%;min-width:560px;background:var(--card)"><tr><th style="text-align:left;padding:12px;border:1px solid var(--line)">ฟีเจอร์ / รายละเอียด</th><th style="text-align:left;padding:12px;border:1px solid var(--line)">Starter Pack (Free)</th><th style="text-align:left;padding:12px;border:1px solid var(--line);background:var(--brand);color:var(--on)">Basic Monthly Pack</th></tr><tr><td style="padding:12px;border:1px solid var(--line);font-weight:700">เหมาะสำหรับ</td><td style="padding:12px;border:1px solid var(--line)">ผู้เริ่มต้นทดลองระบบ</td><td style="padding:12px;border:1px solid var(--line)">ผู้ประกอบการขนส่ง SMEs</td></tr><tr><td style="padding:12px;border:1px solid var(--line);font-weight:700">ปริมาณงานขนส่ง</td><td style="padding:12px;border:1px solid var(--line)">ไม่เกิน 10-15 เที่ยว/เดือน</td><td style="padding:12px;border:1px solid var(--line)"><b>ไม่เกิน 100 เที่ยว/เดือน</b></td></tr><tr><td style="padding:12px;border:1px solid var(--line);font-weight:700">จำนวนผู้ใช้งานระบบ</td><td style="padding:12px;border:1px solid var(--line)">1 Admin</td><td style="padding:12px;border:1px solid var(--line)">5 Admins</td></tr><tr><td style="padding:12px;border:1px solid var(--line);font-weight:700">Mobile App Tracking</td><td style="padding:12px;border:1px solid var(--line)">รองรับ</td><td style="padding:12px;border:1px solid var(--line)">รองรับ + ดูประวัติย้อนหลัง</td></tr><tr><td style="padding:12px;border:1px solid var(--line);font-weight:700">การเข้าถึงงาน 360TRUCK</td><td style="padding:12px;border:1px solid var(--line)">รองรับ</td><td style="padding:12px;border:1px solid var(--line)">รองรับเต็มรูปแบบเพื่อหางานเพิ่ม</td></tr><tr><td style="padding:12px;border:1px solid var(--line);font-weight:700">ราคาค่าบริการ</td><td style="padding:12px;border:1px solid var(--line)"><b>ฟรีตลอดชีพ</b></td><td style="padding:12px;border:1px solid var(--line)"><b>ราคาประหยัดรายเดือน (เริ่มต้นหลักร้อย)</b></td></tr></table></div></div></section>
+<section id="bstart"><div class="w"><h2>เริ่มใช้งานได้ใน 3 ขั้นตอน</h2><div class="g3 seq"><div class="card"><h3>Register</h3><p>สมัครบัญชีใช้งานออนไลน์ภายใน 1 นาที</p></div><div class="card"><h3>Add Fleet</h3><p>ลงทะเบียนข้อมูลรถและดาวน์โหลดแอปคนขับ</p></div><div class="card"><h3>Dispatch &amp; Earn</h3><p>เริ่มสร้างงานบริษัท หรือเลือกหางานเสริมจาก 360TRUCK ได้ทันที</p></div></div></div></section>
+<section class="demo" id="demo"><div class="w"><div id="bform"><h2>พร้อมยกระดับธุรกิจขนส่งของคุณหรือยัง?</h2><p class="lead">สมัครใช้งาน 360TechX Basic วันนี้ ฟรี! ไม่มีค่าใช้จ่ายแอบแฝง</p></div><form id="bf"><label class="f">ชื่อผู้ติดต่อ<input required autocomplete="name"></label><label class="f">ชื่อบริษัท / ร้านค้า<input required autocomplete="organization"></label><label>เบอร์โทรศัพท์<input type="tel" required autocomplete="tel"></label><label>ปริมาณเที่ยวส่งต่อเดือน<input type="number" min="0" required></label><button class="btn" type="submit">ทดลองใช้งานฟรี</button><div id="bok" role="status" style="display:none;grid-column:1/-1;padding:14px;border-radius:8px;background:#2fbf7122;font-weight:500">ส่งข้อมูลเรียบร้อย ทีมงานจะติดต่อกลับภายในเวลาทำการ</div></form></div></section>
+</div>
+</main>
+<footer><div class="w">
+<div>บริษัท ทรีซิกซ์ตี้ เทคเอ็กซ์ จำกัด (สำนักงานใหญ่)<br>2170 ชั้น 8 อาคารกรุงเทพทาวเวอร์ ถนนเพชรบุรีตัดใหม่ แขวงบางกะปิ เขตห้วยขวาง กรุงเทพฯ 10310</div>
+<div>© 2021 THE 360TECHX CO.,LTD. ALL RIGHTS RESERVED.</div>
+</div></footer>
+<script>
+const D=[{"t": "🏭 โรงงานผู้ผลิต (Manufacturing Plants)", "c": ["ต้นทุนการขนส่งผันผวน", "ปัญหาการวางแผนรถให้มีประสิทธิภาพสูงสุด", "การเชื่อมต่อข้อมูลกับระบบ SAP/ERP คลังสินค้า"], "s": ["<b>Seamless API:</b> ดึงข้อมูล Sales Order/Delivery Note จาก ERP มาวางแผนขนส่งทันที", "<b>VRP &amp; Load Optimization:</b> จัดเที่ยวรถเต็มคัน (FTL) ลดการวิ่งเที่ยวว่าง", "<b>Vendor Control:</b> กระจายงานให้รถร่วม (Sub-contractors) เมื่อมียอดเที่ยวขนส่งสูงเกิน fleet หลัก", "<b>Peak Period Solution:</b> เมื่อมียอดสั่งซื้อกระทันหันหรือยอดการผลิตพุ่งสูงขึ้นช่วงหน้าขาย สามารถกดหารถเสริมผ่าน 360TRUCK Crowdsourcing Integration ได้ทันที โดยไม่ต้องเสียเวลาหา Carrier นอกระบบที่ไม่มีการรับประกัน"]}, {"t": "📦 ศูนย์กระจายสินค้า (Distribution Center - DC)", "c": ["การกระจายสินค้าหลายจุด (Multi-drop) ซับซ้อน", "คิวรถแออัดหน้าคลัง (Dock Bottleneck)", "การติดตามสถานะ e-POD ล่าช้า"], "s": ["<b>Dynamic Route Optimization:</b> คำนวณลำดับการจัดส่งและเวลาถึงจุดหมาย (ETA) อย่างแม่นยำ", "<b>Dock &amp; Time-Slot Booking:</b> วางแผนและจัดสรรคิวรถเข้า-ออก DC เพื่อลดความแออัดหน้าคลัง", "<b>360TRUCKER App:</b> คนขับเช็กอิน ยืนยัน e-POD และถ่ายภาพสินค้าผ่านแอปทันที", "<b>Peak Period Solution:</b> ช่วงแคมเปญใหญ่ (เช่น 11.11, 12.12 หรือช่วงเทศกาล) สามารถกดหารถเสริมผ่าน 360TRUCK Crowdsourcing Integration ได้ทันที โดยไม่ต้องเสียเวลาหา Carrier นอกระบบที่ไม่มีการรับประกัน"]}, {"t": "🚚 ผู้ให้บริการโลจิสติกส์ใหญ่ (3PLs & Logistics)", "c": ["ต้องบริหารทั้ง Owned Fleet และ Sub-contractors", "GPS กระจัดกระจายหลายยี่ห้อ", "ค่าซอฟต์แวร์เพิ่มขึ้นตามจำนวนรถที่รับเพิ่ม"], "s": ["<b>Unlimited Truck Scale:</b> ขยาย fleet รับงานเพิ่มได้ไม่จำกัดหัวลาก/ทะเบียน", "<b>Centralized GPS Monitoring:</b> รวบรวม GPS 20+ ยี่ห้อในแดชบอร์ดเดียว", "<b>Sub-contractor Management:</b> คำนวณค่าเที่ยวและจัดสรรงานและบริหารเครือข่ายรถร่วม (Sub-contractors) ได้", "<b>Asset-Light Fleet Expansion:</b> เพิ่มศักยภาพในการรับงานลูกค้ารายใหญ่โดยไม่ต้องลงทุนซื้อรถเพิ่ม เมื่อ Fleet หลักเต็ม สามารถจ่ายงานส่วนเกินเข้าสู่เครือข่ายรถ 100,000+ คันของ 360TRUCK ได้อย่างไร้รอยต่อ"]}];
+const P=document.getElementById("panel"),T=[...document.querySelectorAll(".tabs button")];
+function show(i){T.forEach((b,k)=>b.setAttribute("aria-selected",k==i));P.innerHTML='<div><h3>ความท้าทาย (Pain Points)</h3><ul>'+D[i].c.map(x=>"<li>"+x+"</li>").join("")+'</ul></div><div><h3>โซลูชันและผลลัพธ์จาก 360TechX TMS</h3><ul>'+D[i].s.map(x=>"<li>"+x+"</li>").join("")+"</ul></div>"}
+T.forEach((b,k)=>b.textContent=D[k].t);
+T.forEach((b,k)=>b.onclick=()=>show(k));show(0);
+
+const F=[["Orders","รับข้อมูลออเดอร์เข้าสู่ระบบ","หน้าจอรับออเดอร์"],["Plan","จัดออเดอร์และรถให้เหมาะสม","หน้าจอวางแผน"],["Book","ประสานงานและจองรถ","หน้าจอจองรถ"],["Dispatch","นำแผนไปใช้งานจริง","หน้าจอจ่ายงาน"],["Track","ติดตามสถานะการจัดส่ง","หน้าจอติดตามสถานะ"],["Analyze","วิเคราะห์ประสิทธิภาพการขนส่ง","Dashboard"]];
+const FT=document.getElementById("ft"),FP=document.getElementById("fp");
+function fs(i){[...FT.children].forEach((b,k)=>b.setAttribute("aria-selected",k==i));FP.innerHTML='<div><h3>'+F[i][0]+'</h3><p style="margin:0;color:var(--mut)">'+F[i][1]+'</p></div><div class="shot">พื้นที่วางภาพหน้าจอระบบจริง: '+F[i][2]+'</div>'}
+F.forEach((f,k)=>{const b=document.createElement("button");b.setAttribute("role","tab");b.textContent=f[0];b.onclick=()=>fs(k);b.onmouseenter=()=>fs(k);FT.appendChild(b)});fs(0);
+const $=id=>document.getElementById(id),nf=n=>n.toLocaleString("th-TH");
+function calc(){const t=+$("ct").value,c=+$("cc").value,d=+$("cd").value,u=+$("cu").value;const f=u<80?Math.round(t*(1-u/80)):0,m=f*d;$("cm").textContent=f?"฿"+nf(m*c)+" / เดือน":"Utilization ถึงเป้าหมายแล้ว";$("cs").textContent=f?"ประหยัดได้ราว "+f+" เที่ยว/วัน หรือ ≈ "+nf(m)+" เที่ยว/เดือน":"ลองปรับตัวเลขเพื่อดูโอกาสอื่น"}
+["ct","cc","cd","cu"].forEach(i=>$(i).oninput=calc);calc();
+const FL=$("fl");for(let i=0;i<12;i++)FL.appendChild(document.createElement("i"));let on=false;
+$("fb").onclick=()=>{on=!on;[...FL.children].forEach((e,i)=>e.classList.toggle("off",on&&i>=9));$("fr").textContent=on?"รถ 9 คัน · Utilization 83%":"รถ 12 คัน · Utilization 64%";$("fb").textContent=on?"Reset":"Optimize My Plan"};
+const Q=[["ทีม Planner ยังใช้ Excel จัดออเดอร์ลงรถอยู่หรือไม่?","ประสิทธิภาพการวางแผน"],["รถออกวิ่งโดยมีพื้นที่ว่างเหลือบ่อยหรือไม่?","การใช้ความจุรถ"],["ทีมยังต้องโทรถามคนขับหรือ Transporter เพื่อติดตามสถานะหรือไม่?","การมองเห็นสถานะการขนส่ง"],["ข้อมูลการขนส่งกระจายอยู่หลายระบบหรือไม่?","การเชื่อมต่อข้อมูล"],["ยังวัดต้นทุนและ Truck Utilization ได้ยากหรือไม่?","การวัดต้นทุนและประสิทธิภาพ"]];
+$("qs").innerHTML=Q.map((q,i)=>'<div class="q"><span>'+q[0]+'</span><label><input type="radio" name="q'+i+'" value="1"> ใช่</label><label><input type="radio" name="q'+i+'" value="0"> ไม่ใช่</label></div>').join("");
+$("qb").onclick=()=>{const y=Q.filter((q,i)=>document.querySelector('input[name=q'+i+']:checked')?.value=="1");const a=Q.filter((q,i)=>document.querySelector('input[name=q'+i+']:checked'));if(a.length<5){$("qr").textContent="กรุณาตอบให้ครบทั้ง 5 ข้อ";return}$("qr").innerHTML='<b class="big">'+Math.max(10,100-y.length*18)+' / 100</b>คะแนนประสิทธิภาพการบริหารขนส่ง (ประเมินเบื้องต้น)<br>'+(y.length?'โอกาสที่ควรปรับปรุง: '+y.slice(0,3).map(q=>q[1]).join(" · ")+'<p><a class="btn" href="#demo">คุยกับทีมงานเรื่องผลประเมิน</a></p>':'การดำเนินงานของคุณอยู่ในเกณฑ์ดี ลองนัดสาธิตเพื่อดูโอกาสเพิ่มเติม')};
+document.getElementById("f").addEventListener("submit",e=>{e.preventDefault();document.getElementById("ok").style.display="block";e.target.querySelector("button").disabled=true});
+
+document.getElementById("ef").addEventListener("submit",e=>{e.preventDefault();document.getElementById("eok").style.display="block";e.target.querySelector("button").disabled=true});
+const T2={h:"360TechX TMS | ระบบบริหารการขนส่งระดับ Enterprise ขยาย Fleet ไม่จำกัด",e:"TMS Enterprise | 360TechX ระบบบริหารการขนส่งสำหรับองค์กรขนาดใหญ่"};
+T2.b="TMS Basic | 360TechX ระบบจัดการขนส่งสำหรับ SME";
+const K=()=>location.hash.indexOf("#/enterprise")==0?"e":location.hash.indexOf("#/basic")==0?"b":"h";
+function spy(){const n=document.getElementById("sn-"+K());let c=null;n.querySelectorAll("a").forEach(a=>{const t=document.querySelector(".page.on "+a.getAttribute("href"));if(t&&t.getBoundingClientRect().top<=150)c=a});n.querySelectorAll("a").forEach(a=>a.classList.toggle("on",a==c))}
+addEventListener("scroll",spy,{passive:true});
+function route(){const k=K();["h","e","b"].forEach(x=>{document.getElementById("pg-"+x).classList.toggle("on",x==k);document.getElementById("sn-"+x).hidden=x!=k});document.querySelectorAll(".pn a[data-p]").forEach(a=>a.setAttribute("aria-current",a.dataset.p==k?"page":"false"));document.title=T2[k];window.scrollTo(0,0);spy()}
+document.getElementById("bf").addEventListener("submit",e=>{e.preventDefault();document.getElementById("bok").style.display="block";e.target.querySelector("button").disabled=true});
+addEventListener("hashchange",route);route();
+document.addEventListener("click",ev=>{const a=ev.target.closest('a[href^="#"]');if(!a)return;const h=a.getAttribute("href");if(h.indexOf("#/")==0)return;ev.preventDefault();const t=h.length>1&&h!="#top"?document.querySelector(".page.on "+h):null;t?t.scrollIntoView():window.scrollTo(0,0)});
+</script>
+</body>
+</html>
